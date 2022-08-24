@@ -15,25 +15,25 @@ class DataIN{
 
     
            var label_unix_in=[]; 
+
+
         //１日～31日までの場合1daymax31本
         if(bet_time<=2678400 && bet_time>=86400){
             
+console.log("info 1d~31d")
+
+
             //時間変化ラベル作成
-        
-            
             for(let h=0 ;h<user_outtime ;h=h+86400){
                 label_unix_in.push(user_intime+h)
             }
             
+
             var label_time_arr=[]//ラベル名
-            
-            
-            
+  
             for(let i=0 ;i<31 ;i=i+1){
                 var label_time_in= new Date(label_unix_in[i]*1000);
-                
                 var label_time_in_2=label_time_in.getMonth()+1+"/"+label_time_in.getDate()+"/ "+label_time_in.getHours()+":"+label_time_in.getMinutes()
-                
                     label_time_arr.push(label_time_in_2);
                 }
             
@@ -47,6 +47,8 @@ class DataIN{
                 var backdata_arr_time_in= backdata_arr.filter(x => x.end_time_unix <= user_intime+(i+86400) && x.end_time_unix > user_intime+i );
                 backdata_arr_time.push(backdata_arr_time_in);
             }
+
+       
             
             //関心度で分ける
             var int_line=70
@@ -350,7 +352,8 @@ class DataIN{
         //0～3時間の場合18プロット10分刻み
         else if(bet_time<10800 && bet_time>=0){
         
-        
+            console.log("info 0m~3hour")
+
             //時間変化ラベル作成
             
             for(let h=0 ;h<user_outtime ;h=h+600){
@@ -380,21 +383,15 @@ class DataIN{
                 backdata_arr_time.push(backdata_arr_time_in);
             }
             
-            
-            //関心度で分ける
-            var int_line=70
+            console.log(backdata_arr_time)
             
             
-            var all_max_int_arr  = backdata_arr.filter(x => x.interested <=100 && x.interested>=int_line );
-        
-        
-            var all_nomal_int_arr= backdata_arr.filter(x => x.interested <int_line && x.interested>0 );
-        
-        
-            var all_all_int_arr  = backdata_arr.filter(x => x.interested <=100 && x.interested>0 );
-        
-        
-            var all_not_int_arr  = backdata_arr.filter(x => x.interested ===0 );
+            //関心度で分ける 関数
+        var int_line=45    
+        var all_max_int_arr  = backdata_arr.filter(x => x.interested <=100 && x.interested>=int_line );
+        var all_nomal_int_arr= backdata_arr.filter(x => x.interested <int_line && x.interested>0 );
+        var all_all_int_arr  = backdata_arr.filter(x => x.interested <=100 && x.interested>0 );
+        var all_not_int_arr  = backdata_arr.filter(x => x.interested ===0 );
             
             
             
@@ -685,7 +682,8 @@ class DataIN{
         
         //3時間から1日 
         else if (bet_time<86400 && bet_time>=10800){
-        
+            console.log("info 3hour~1d")
+
             //時間変化ラベル作成
 
             for(let h=0 ;h<user_outtime ;h=h+3600){
