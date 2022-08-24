@@ -46,7 +46,7 @@ header{
 
 .container{
     background-color:whitesmoke; 
-    height:400px;
+    height:auto;
     padding-top: 60px;
 }
 
@@ -134,10 +134,20 @@ header{
     height:36px;
     width:96%;
 }
+
 .searcharea p{
     position:relative;
     bottom:0%;
 }
+
+#app{
+    margin-top: 80px;
+    display:flex;
+    /* flex-direction: column ; */
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
 
 .graphA h1{
     color:rgb(241, 102, 9);
@@ -145,24 +155,21 @@ header{
 }
 .graphA{
     width:85%;
-    height:400px;
-    margin:0 auto;
+    height:420px;
+    margin:0 auto ;
     position:relative;
     top:3%;
     display:flex;
 }
 
-#graph_A1{
-    max-height: 350px;
-}
-
 .graphA1{
-    width:35%;
-    height:420px;
+    width:40%;
+    height:95%;
     margin:0 auto;
-   
+    margin-left:0%;
+    position:relative;
+    left:-1em;
     background-color: white;
-    margin-right:40px;
 
     background: white;
     border-bottom: solid 3px #bdc0c3;
@@ -188,10 +195,12 @@ header{
 
 
 .graphA2{
-    width:65%;
-    height:420px;
+    width:52%;
+    height:95%;
     margin:0 auto;
-    
+    margin-right:0%;
+    position:relative;
+    left:1em;
     background: white;
     border-bottom: solid 3px #bdc0c3;
     border-left:solid 2px #bdc0c3 ;
@@ -223,6 +232,14 @@ header{
     color:#5c5c5c;
     font-weight: 300;
 }
+.A21 hr{
+    border:solid 1px #e2e2e2;
+    position:relative;
+	left:-14%;
+    border-radius: 5px;
+    width:125%;
+    margin:0 auto;
+}
 .A22{
     width:45%;
     margin:0 auto;
@@ -232,6 +249,14 @@ header{
     color:#5c5c5c;
     font-weight: 300;
     
+}
+.A22 hr{
+    border:solid 1px #e2e2e2;
+    position:relative;
+    left:-12%;
+    border-radius: 5px;
+    width:125%;
+    margin:0 auto;
 }
 
 
@@ -270,14 +295,16 @@ header{
 }
 .B1h2{
     margin:auto 0;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .B1h2 h2{
     color:#5c5c5c;
+    width: 150px;
     font-weight:300;
 }
 .B1inner{
-    width:80%;
+    width:90%;
+    margin-left: 20px;
 }
 .B2{
     height:40%;
@@ -286,14 +313,16 @@ header{
 }
 .B2h2{
     margin:auto 0;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .B2h2 h2{
     color:#5c5c5c;
+    width: 150px;
     font-weight: 300;
 }
 .B2inner{
-    width:80%;
+    width:90%;
+    margin-left: 20px;
 }
 
 
@@ -346,7 +375,6 @@ header{
     padding: 0.5em 1em;
 }
 .graphD1title{
-    display:flex;
     margin-left: 33px;
     margin-top: 10px;
 }
@@ -357,7 +385,7 @@ header{
     margin:0 auto;
 }
 .graphD11{
-    height: 30%;
+    height: auto;
 }
 .graphD1 h2{
     color:#5c5c5c;
@@ -366,10 +394,10 @@ header{
     margin-top: 12px;
 }
 .graphD12{
-    height: 30%;
+    height: auto;
 }
 .graphD13{
-    height: 30%;
+    height: auto;
 }
 
 
@@ -399,7 +427,6 @@ header{
     padding: 0.5em 1em;
 }
 .graphD2title{
-    display:flex;
     margin-left: 33px;
     margin-top: 10px;
 }
@@ -410,13 +437,13 @@ header{
     margin:0 auto;
 }
 .graphD21{
-    height: 30%;
+    height: auto;
 }
 .graphD22{
-    height: 30%;
+    height: auto;
 }
 .graphD23{
-    height: 30%;
+    height: auto;
 }
 
 
@@ -432,4 +459,209 @@ footer{
     margin-left:2%;
     margin-right: auto;
     color: white;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 1440px) {
+
+    .graphA{
+        width:100%;
+        height: auto;
+        margin:0 auto;
+        position:relative;
+        top:3%;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 70px;
+    }
+    
+	.graphA1{
+        width:85%;
+        height:auto;
+        margin:0 0;
+        position:relative;
+        left:0em;
+        background-color: white;
+    
+        background: white;
+        border-bottom: solid 3px #bdc0c3;
+        border-left:solid 2px #bdc0c3 ;
+        border-radius: 9px;
+        padding: 0.5em 1em;
+    }
+    .graphA2{
+        width:85%;
+        height:auto;
+        margin:0 0;
+        position:relative;
+        left:0em;
+
+        background: white;
+        border-bottom: solid 3px #bdc0c3;
+        border-left:solid 2px #bdc0c3 ;
+        border-radius: 9px;
+        padding: 0.5em 1em;
+    }
+
+    .graphB{
+        width:85%;
+        height:auto;
+        margin:0 auto;
+        position:relative;
+        top:5%;
+    
+        background: white;
+        border-bottom: solid 3px #bdc0c3;
+        border-left:solid 2px #bdc0c3 ;
+        border-radius: 9px;
+        padding: 0.5em 1em;
+    }
+    .B1h2 h2{
+        color:#5c5c5c;
+        width:auto;
+        max-width: 150px;
+        font-weight:300;
+    }
+    .B2h2 h2{
+        color:#5c5c5c;
+        width:auto;
+        max-width: 150px;
+        font-weight: 300;
+    }
+    .graphD1{
+        width:85%;
+        height:auto;
+        margin:0 auto;
+        position:relative;
+        top:9%;
+    
+        background: white;
+        border-bottom: solid 3px #bdc0c3;
+        border-left:solid 2px #bdc0c3 ;
+        border-radius: 9px;
+        padding: 0.5em 1em;
+    }
+
+    .graphD2{
+        width:85%;
+        height:auto;
+        margin:0 auto;
+        position:relative;
+        top:11%;
+    
+        background: white;
+        border-bottom: solid 3px #bdc0c3;
+        border-left:solid 2px #bdc0c3 ;
+        border-radius: 9px;
+        padding: 0.5em 1em;
+    }
+
+}
+
+@media screen and (max-width: 790px) {
+    .graphA2inner {
+        width:90%;
+        margin:0 auto;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 70px;
+    }
+    .A21{
+        width:100%;
+        margin:0 auto;
+        text-align: center;
+    }
+    .A22{
+        width:100%;
+        margin:0 auto;
+        text-align: center;
+    } 
+       
+    .A21 hr{
+        border:solid 1px #e2e2e2;
+        position:relative;
+        left:-3%;
+        border-radius: 5px;
+        width:106%;
+        margin:0 auto;
+    }
+    .A22 hr{
+        border:solid 1px #e2e2e2;
+        position:relative;
+        left:-3%;
+        border-radius: 5px;
+        width:106%;
+        margin:0 auto;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .searcharea{
+        width:85%;
+        height:auto;
+        margin:0 auto;
+        background-color:white;
+        border-radius:20px;
+        position:relative;
+        top:1.5%;
+        text-align: center;
+         
+        
+        border-bottom: solid 3px #bdc0c3;
+        border-left:solid 2px #bdc0c3 ;
+        border-radius: 9px;
+        padding: 0.5em 1em;
+    }
+
+    .inputarea{
+        padding-top: 20px;
+        position:relative;
+        margin:0 auto;
+        width:88%;
+        position:relative;
+        top:10%;
+        display:flex; 
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .searchbutton{
+        height:100%;
+        width:100%;
+        position:relative;
+        margin: 20px 0px 20px 0px;
+        top:20%;
+        text-align: center;
+    }
+
+    .B1{
+        height:auto;
+        margin:0 auto;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .B2{
+        height:auto;
+        margin:0 auto;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .B1h2 h2{
+        color:#5c5c5c;
+        width:auto;
+        max-width: 100%;
+        font-weight:300;
+    }
+    .B2h2 h2{
+        color:#5c5c5c;
+        width:auto;
+        max-width: 100%;
+        font-weight: 300;
+    }
 }

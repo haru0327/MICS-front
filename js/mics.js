@@ -10,7 +10,7 @@ class MICS{
         this.date_last = -1;
         this.interest_data = [];
         this.is_pulled = false;
-        this.container = document.getElementById("serch_container");
+        this.container = document.getElementById("app");
     }
     
     //サーバーからデータ取得
@@ -22,8 +22,7 @@ class MICS{
                 this.interest_data = interest_data;
                 console.log("[Info] Successfully input data into MICS class");
                 this.is_pulled = true;
-                this.container.style.height = 4400 + "px";
-                this.container.style.paddingTop = 0 + "px";
+                this.container.style.paddingBottom = 130 + "px";
                 this.graph = new MICSGrahp(this);
             }else{
                 console.log("[Info] Successfully updated MICS class");

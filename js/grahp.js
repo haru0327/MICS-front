@@ -786,22 +786,23 @@ class MICSGrahp{
                 </div>
                 <hr noshade>    
                 <div class="graphA1inner">
-                    <canvas id="graph_A1"></canvas>
+                    <canvas id="graph_A1" style="max-height: 320px"></canvas>
                 </div> 
             </div>
             <div class="graphA2">
                 <div class="graphA2title">
                     <h1>関心度別男女比</h1>
                 </div>
-                <hr noshade> 
                 <div class="graphA2inner">
                     <div class="A21">
+                    <hr noshade> 
                         <h2>特に関心あり</h2>
-                        <canvas id="graph_A21" height=100%></canvas>
+                        <canvas id="graph_A21" height="100" style="max-height: 290px"></canvas>
                     </div>
                     <div class="A22">
+                    <hr noshade> 
                         <h2>特に関心あり&関心あり</h2>
-                        <canvas id="graph_A22"></canvas>
+                        <canvas id="graph_A22" height="100" style="max-height: 290px"></canvas>
                     </div>
                 </div>
             </div>                     
@@ -817,18 +818,16 @@ class MICSGrahp{
             <div class="B1">
                 <div class="B1h2"><h2>特に関心あり</h2></div>
                 <div class="B1inner">
-                    <canvas id="graph_B1" width="100" height="12"></canvas>
+                    <canvas id="graph_B1" width="90" height="100" style="max-height: 100%"></canvas>
                 </div>
             </div>
             <hr noshade> 
             <div class="B2">
                 <div class="B2h2">
-                <h2>特に関心あり</h2>
-                <h2>&</h2>
-                <h2>関心あり</h2>
+                    <h2>特に関心あり&関心あり</h2>
                 </div>
                 <div class="B2inner">
-                    <canvas id="graph_B2" width="100" height="12"></canvas>
+                    <canvas id="graph_B2" width="90" height="100" style="max-height: 100%"></canvas>
                 </div>
             </div>
         </div>
@@ -841,7 +840,7 @@ class MICSGrahp{
             <div><hr noshade></div>
             
             <div class="C1">
-                <canvas id="graph_C1" width="100" height="25"></canvas>
+                <canvas id="graph_C1" width="100" height="300" style="max-height: 100%"></canvas>
             </div>
         </div>
 
@@ -854,21 +853,21 @@ class MICSGrahp{
             <div class="graphD11">
                 <h2>全体</h2>
                 <div class="graphD11inner">
-                    <canvas id="graph_D11" width="100" height="20"></canvas>
+                    <canvas id="graph_D11" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD12">
                 <h2>男性</h2>
                 <div class="graphD12inner">
-                    <canvas id="graph_D12" width="100" height="20"></canvas>
+                    <canvas id="graph_D12" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD13">
                 <h2>女性</h2>
                 <div class="graphD13inner">
-                    <canvas id="graph_D13" width="100" height="20"></canvas>
+                    <canvas id="graph_D13" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>
             </div>
         </div>
@@ -881,26 +880,27 @@ class MICSGrahp{
             <div class="graphD21">
                 <h2>全体</h2>
                 <div class="graphD21inner">
-                    <canvas id="graph_D21" width="100" height="20"></canvas>
+                    <canvas id="graph_D21" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD22">
                 <h2>男性</h2>
                 <div class="graphD22inner">
-                    <canvas id="graph_D22" width="100" height="20"></canvas>
+                    <canvas id="graph_D22" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD23">
                 <h2>女性</h2>
                 <div class="graphD23inner">
-                    <canvas id="graph_D23" width="100" height="20"></canvas>
+                    <canvas id="graph_D23" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>         
             </div>
         </div>`;
     
         this.app_element = document.getElementById("app");
-        this.app_element.insertAdjacentHTML('afterend', this.new_HTML_data);
+        this.app_element.insertAdjacentHTML('afterbegin', this.new_HTML_data);
+
     }
 }
