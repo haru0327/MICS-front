@@ -793,13 +793,14 @@ class MICSGrahp{
                 <div class="graphA2title">
                     <h1>関心度別男女比</h1>
                 </div>
-                <hr noshade> 
                 <div class="graphA2inner">
                     <div class="A21">
+                    <hr noshade> 
                         <h2>特に関心あり</h2>
                         <canvas id="graph_A21" height="100" style="max-height: 290px"></canvas>
                     </div>
                     <div class="A22">
+                    <hr noshade> 
                         <h2>特に関心あり&関心あり</h2>
                         <canvas id="graph_A22" height="100" style="max-height: 290px"></canvas>
                     </div>
@@ -823,9 +824,7 @@ class MICSGrahp{
             <hr noshade> 
             <div class="B2">
                 <div class="B2h2">
-                <h2>特に関心あり</h2>
-                <h2>&</h2>
-                <h2>関心あり</h2>
+                    <h2>特に関心あり&関心あり</h2>
                 </div>
                 <div class="B2inner">
                     <canvas id="graph_B2" width="90" height="100" style="max-height: 100%"></canvas>

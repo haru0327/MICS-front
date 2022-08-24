@@ -43,7 +43,7 @@ function PullMessage(MICS_class){
   
     //通信をおこなってデータゲット
     console.log("[Info] Connect to server");
-    console.log("[Info:debug] d1, d2 = " + d1 + ", " + d2);
+    //console.log("[Info:debug] d1, d2 = " + d1 + ", " + d2);
     //ボタン非アクティブ化(2重リクエスト防止)
     let serch_button = document.getElementsByClassName('searchbutton')[0].childNodes.item(0);
     serch_button.value = 'Loading';
@@ -56,11 +56,10 @@ function PullMessage(MICS_class){
       }
     })//レスポンスを処理
     .then(response => {
-      console.log(response);
       console.log("[Info] Successfully connect to server");
       ApiData= response.data
       InterestData = JSON.parse(JSON.stringify(ApiData));
-      console.log(InterestData);
+      //console.log(InterestData);
       MICS_class.GetMessage(d1, d2, InterestData)
       //エラー処理
     }).catch(err => {

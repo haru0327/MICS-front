@@ -156,19 +156,20 @@ header{
 .graphA{
     width:85%;
     height:420px;
-    margin:0 auto;
+    margin:0 auto ;
     position:relative;
     top:3%;
     display:flex;
 }
 
 .graphA1{
-    width:35%;
+    width:40%;
     height:95%;
     margin:0 auto;
-   
+    margin-left:0%;
+    position:relative;
+    left:-1em;
     background-color: white;
-    margin-right:40px;
 
     background: white;
     border-bottom: solid 3px #bdc0c3;
@@ -194,10 +195,12 @@ header{
 
 
 .graphA2{
-    width:65%;
+    width:52%;
     height:95%;
     margin:0 auto;
-    
+    margin-right:0%;
+    position:relative;
+    left:1em;
     background: white;
     border-bottom: solid 3px #bdc0c3;
     border-left:solid 2px #bdc0c3 ;
@@ -229,6 +232,14 @@ header{
     color:#5c5c5c;
     font-weight: 300;
 }
+.A21 hr{
+    border:solid 1px #e2e2e2;
+    position:relative;
+	left:-14%;
+    border-radius: 5px;
+    width:125%;
+    margin:0 auto;
+}
 .A22{
     width:45%;
     margin:0 auto;
@@ -238,6 +249,14 @@ header{
     color:#5c5c5c;
     font-weight: 300;
     
+}
+.A22 hr{
+    border:solid 1px #e2e2e2;
+    position:relative;
+    left:-12%;
+    border-radius: 5px;
+    width:125%;
+    margin:0 auto;
 }
 
 
@@ -276,14 +295,16 @@ header{
 }
 .B1h2{
     margin:auto 0;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .B1h2 h2{
     color:#5c5c5c;
+    width: 150px;
     font-weight:300;
 }
 .B1inner{
-    width:95%;
+    width:90%;
+    margin-left: 20px;
 }
 .B2{
     height:40%;
@@ -292,14 +313,16 @@ header{
 }
 .B2h2{
     margin:auto 0;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .B2h2 h2{
     color:#5c5c5c;
+    width: 150px;
     font-weight: 300;
 }
 .B2inner{
-    width:95%;
+    width:90%;
+    margin-left: 20px;
 }
 
 
@@ -439,10 +462,10 @@ footer{
 }
 
 /* レスポンシブ対応 */
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1440px) {
 
     .graphA{
-        width:85%;
+        width:100%;
         height: auto;
         margin:0 auto;
         position:relative;
@@ -454,10 +477,11 @@ footer{
     }
     
 	.graphA1{
-        width:100%;
+        width:85%;
         height:auto;
         margin:0 0;
-       
+        position:relative;
+        left:0em;
         background-color: white;
     
         background: white;
@@ -467,17 +491,18 @@ footer{
         padding: 0.5em 1em;
     }
     .graphA2{
-        width:100%;
+        width:85%;
         height:auto;
         margin:0 0;
-        
+        position:relative;
+        left:0em;
+
         background: white;
         border-bottom: solid 3px #bdc0c3;
         border-left:solid 2px #bdc0c3 ;
         border-radius: 9px;
         padding: 0.5em 1em;
     }
-
 
     .graphB{
         width:85%;
@@ -492,7 +517,18 @@ footer{
         border-radius: 9px;
         padding: 0.5em 1em;
     }
-
+    .B1h2 h2{
+        color:#5c5c5c;
+        width:auto;
+        max-width: 150px;
+        font-weight:300;
+    }
+    .B2h2 h2{
+        color:#5c5c5c;
+        width:auto;
+        max-width: 150px;
+        font-weight: 300;
+    }
     .graphD1{
         width:85%;
         height:auto;
@@ -542,6 +578,23 @@ footer{
         width:100%;
         margin:0 auto;
         text-align: center;
+    } 
+       
+    .A21 hr{
+        border:solid 1px #e2e2e2;
+        position:relative;
+        left:-3%;
+        border-radius: 5px;
+        width:106%;
+        margin:0 auto;
+    }
+    .A22 hr{
+        border:solid 1px #e2e2e2;
+        position:relative;
+        left:-3%;
+        border-radius: 5px;
+        width:106%;
+        margin:0 auto;
     }
 }
 
@@ -583,5 +636,32 @@ footer{
         margin: 20px 0px 20px 0px;
         top:20%;
         text-align: center;
+    }
+
+    .B1{
+        height:auto;
+        margin:0 auto;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .B2{
+        height:auto;
+        margin:0 auto;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .B1h2 h2{
+        color:#5c5c5c;
+        width:auto;
+        max-width: 100%;
+        font-weight:300;
+    }
+    .B2h2 h2{
+        color:#5c5c5c;
+        width:auto;
+        max-width: 100%;
+        font-weight: 300;
     }
 }
