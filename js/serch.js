@@ -76,8 +76,7 @@ function PullMessage(MICS_class){
       //その他のエラー
       else{
         //エラーメッセージ
-        let error_msg = "[Error] " + err.stack;
-        throw new Error(error_msg)
+        throw new Error(err.stack)
       }
     }).finally(() => {
       //ボタン再アクティブ化
