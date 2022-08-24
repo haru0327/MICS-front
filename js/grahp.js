@@ -113,7 +113,7 @@ class MICSGrahp{
         const chart = new Chart(element, {
             type:'bar',
             data: {
-                labels: ["男性", "女性"],
+                labels: ["女性", "男性"],
                 datasets: [
                 {
                     barPercentage:0.6,
@@ -182,7 +182,7 @@ class MICSGrahp{
         const chart = new Chart(element, {
             type:'bar',
             data: {
-                labels: ["男性", "女性"],
+                labels: ["女性", "男性"],
                 datasets: [
                   {
                     barPercentage:0.6,
@@ -803,6 +803,7 @@ class MICSGrahp{
                         <h2>特に関心あり&関心あり</h2>
                         <canvas id="graph_A22"></canvas>
                     </div>
+                 
                 </div>
             </div>                     
         </div>
@@ -831,6 +832,7 @@ class MICSGrahp{
                     <canvas id="graph_B2" width="100" height="12"></canvas>
                 </div>
             </div>
+        
         </div>
 
         <div class="graphC" id="graphC">
@@ -847,7 +849,7 @@ class MICSGrahp{
 
         <div class="graphD1" id="graphD1">
             <div class="graphD1title">
-                <h1>【関心あり】年齢比時間推移</h1>
+                <h1>【特に関心あり】年齢比時間推移</h1>
                 
             </div>
             <hr noshade> 
@@ -859,14 +861,14 @@ class MICSGrahp{
             </div>
             <hr>
             <div class="graphD12">
-                <h2>男性</h2>
+                <h2>女性</h2>
                 <div class="graphD12inner">
                     <canvas id="graph_D12" width="100" height="20"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD13">
-                <h2>女性</h2>
+                <h2>男性</h2>
                 <div class="graphD13inner">
                     <canvas id="graph_D13" width="100" height="20"></canvas>
                 </div>
@@ -875,7 +877,7 @@ class MICSGrahp{
 
         <div class="graphD2" id="graphD2">
             <div class="graphD2title">
-                <h1>【特に関心あり】年齢比時間推移</h1>
+                <h1>【特に関心あり＆関心あり】年齢比時間推移</h1>
             </div>
             <hr noshade> 
             <div class="graphD21">
@@ -886,14 +888,14 @@ class MICSGrahp{
             </div>
             <hr>
             <div class="graphD22">
-                <h2>男性</h2>
+                <h2>女性</h2>
                 <div class="graphD22inner">
                     <canvas id="graph_D22" width="100" height="20"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD23">
-                <h2>女性</h2>
+                <h2>男性</h2>
                 <div class="graphD23inner">
                     <canvas id="graph_D23" width="100" height="20"></canvas>
                 </div>         
