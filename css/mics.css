@@ -152,10 +152,6 @@ header{
     display:flex;
 }
 
-#graph_A1{
-    max-height: 350px;
-}
-
 .graphA1{
     width:35%;
     height:420px;
@@ -277,7 +273,7 @@ header{
     font-weight:300;
 }
 .B1inner{
-    width:80%;
+    width:95%;
 }
 .B2{
     height:40%;
@@ -293,7 +289,7 @@ header{
     font-weight: 300;
 }
 .B2inner{
-    width:80%;
+    width:95%;
 }
 
 

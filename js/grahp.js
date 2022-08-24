@@ -786,7 +786,7 @@ class MICSGrahp{
                 </div>
                 <hr noshade>    
                 <div class="graphA1inner">
-                    <canvas id="graph_A1"></canvas>
+                    <canvas id="graph_A1" style="max-height: 350px"></canvas>
                 </div> 
             </div>
             <div class="graphA2">
@@ -797,11 +797,11 @@ class MICSGrahp{
                 <div class="graphA2inner">
                     <div class="A21">
                         <h2>特に関心あり</h2>
-                        <canvas id="graph_A21" height=100%></canvas>
+                        <canvas id="graph_A21" height=100% style="max-height: 320px"></canvas>
                     </div>
                     <div class="A22">
                         <h2>特に関心あり&関心あり</h2>
-                        <canvas id="graph_A22"></canvas>
+                        <canvas id="graph_A22" style="max-height: 320px"></canvas>
                     </div>
                 </div>
             </div>                     
@@ -817,7 +817,7 @@ class MICSGrahp{
             <div class="B1">
                 <div class="B1h2"><h2>特に関心あり</h2></div>
                 <div class="B1inner">
-                    <canvas id="graph_B1" width="100" height="12"></canvas>
+                    <canvas id="graph_B1" width="100" height="12" style="max-height: 155px"></canvas>
                 </div>
             </div>
             <hr noshade> 
@@ -828,7 +828,7 @@ class MICSGrahp{
                 <h2>関心あり</h2>
                 </div>
                 <div class="B2inner">
-                    <canvas id="graph_B2" width="100" height="12"></canvas>
+                    <canvas id="graph_B2" width="100" height="12" style="max-height: 155px"></canvas>
                 </div>
             </div>
         </div>
@@ -841,7 +841,7 @@ class MICSGrahp{
             <div><hr noshade></div>
             
             <div class="C1">
-                <canvas id="graph_C1" width="100" height="25"></canvas>
+                <canvas id="graph_C1" width="100" height="25" style="max-height: 330px"></canvas>
             </div>
         </div>
 
@@ -854,21 +854,21 @@ class MICSGrahp{
             <div class="graphD11">
                 <h2>全体</h2>
                 <div class="graphD11inner">
-                    <canvas id="graph_D11" width="100" height="20"></canvas>
+                    <canvas id="graph_D11" width="100" height="20" style="max-height: 290px"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD12">
                 <h2>男性</h2>
                 <div class="graphD12inner">
-                    <canvas id="graph_D12" width="100" height="20"></canvas>
+                    <canvas id="graph_D12" width="100" height="20" style="max-height: 290px"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD13">
                 <h2>女性</h2>
                 <div class="graphD13inner">
-                    <canvas id="graph_D13" width="100" height="20"></canvas>
+                    <canvas id="graph_D13" width="100" height="20" style="max-height: 290px"></canvas>
                 </div>
             </div>
         </div>
@@ -881,21 +881,21 @@ class MICSGrahp{
             <div class="graphD21">
                 <h2>全体</h2>
                 <div class="graphD21inner">
-                    <canvas id="graph_D21" width="100" height="20"></canvas>
+                    <canvas id="graph_D21" width="100" height="20" style="max-height: 290px"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD22">
                 <h2>男性</h2>
                 <div class="graphD22inner">
-                    <canvas id="graph_D22" width="100" height="20"></canvas>
+                    <canvas id="graph_D22" width="100" height="20" style="max-height: 290px"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD23">
                 <h2>女性</h2>
                 <div class="graphD23inner">
-                    <canvas id="graph_D23" width="100" height="20"></canvas>
+                    <canvas id="graph_D23" width="100" height="20" style="max-height: 290px"></canvas>
                 </div>         
             </div>
         </div>`;
