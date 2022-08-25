@@ -272,7 +272,7 @@ header{
 }
 .graphB{
     width:85%;
-    height:400px;
+    min-height:400px;
     margin:0 auto;
     position:relative;
     top:5%;
@@ -304,6 +304,7 @@ header{
 }
 .B1inner{
     width:90%;
+    min-height:160px;
     margin-left: 20px;
 }
 .B2{
@@ -322,6 +323,7 @@ header{
 }
 .B2inner{
     width:90%;
+    min-height:160px;
     margin-left: 20px;
 }
 
@@ -506,7 +508,6 @@ footer{
 
     .graphB{
         width:85%;
-        height:auto;
         margin:0 auto;
         position:relative;
         top:5%;

@@ -60,7 +60,7 @@ class MICSGrahp{
             type:'pie',
             // データを指定
             data: {
-                labels: ["特に関心有り", "関心有り", "関心なし"],
+                labels: ["特に関心あり", "関心あり", "関心なし"],
                 datasets: [{
                     backgroundColor: [
                     'rgba(220, 53, 69, 1)'  ,
@@ -801,7 +801,7 @@ class MICSGrahp{
                     </div>
                     <div class="A22">
                     <hr noshade> 
-                        <h2>特に関心あり&関心あり</h2>
+                        <h2>特に関心あり & 関心あり</h2>
                         <canvas id="graph_A22" height="100" style="max-height: 290px"></canvas>
                     </div>
                 </div>
@@ -824,7 +824,7 @@ class MICSGrahp{
             <hr noshade> 
             <div class="B2">
                 <div class="B2h2">
-                    <h2>特に関心あり&関心あり</h2>
+                    <h2>特に関心あり & 関心あり</h2>
                 </div>
                 <div class="B2inner">
                     <canvas id="graph_B2" width="90" height="100" style="max-height: 100%"></canvas>
