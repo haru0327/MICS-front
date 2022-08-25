@@ -902,5 +902,60 @@ class MICSGrahp{
         this.app_element = document.getElementById("app");
         this.app_element.insertAdjacentHTML('afterbegin', this.new_HTML_data);
 
+
+        //ページ上部に戻るボタンのイベントを登録
+        window.addEventListener('scroll', function(){
+            let button = document.getElementById("back_to_top");
+            let footer = document.getElementById("footer");
+            console.log(GetAbsolutePositionTopY(footer));
+            if(button.style.visibility == 'hidden'){
+                if(200 < window.scrollY){
+                    button.animate(
+                        [
+                            { opacity: 0 },
+                            { opacity: 1 }
+                        ],
+                        {
+                            duration: 100,
+                            fill: 'forwards'
+                        }
+                    );
+                    button.style.visibility = 'visible';
+                }
+            }else{
+                if(200 >= window.scrollY){
+                    button.animate(
+                        [
+                            { opacity: 1 },
+                            { opacity: 0 }
+                        ],
+                        {
+                            duration: 100,
+                            fill: 'forwards'
+                        }
+                    );
+                    setTimeout(function(){
+                        button.style.visibility = 'hidden';
+                    }, 200);
+                }
+                if(GetAbsolutePositionTopY(footer) < window.innerHeight + window.scrollY){
+                    
+                    button.style.bottom = 30 + (window.innerHeight + window.scrollY - GetAbsolutePositionTopY(footer)) + "px";
+                }else{
+                    button.style.position = "fixed"
+                    button.style.bottom = 30 + "px";
+                    button.style.right = 30 + "px";
+                }
+            }
+        });
     }
+}
+
+function GetAbsolutePositionTopY(element){
+    let rect = element.getBoundingClientRect();
+    return rect.top + window.pageYOffset;
+}
+function GetAbsolutePositionBottomY(element){
+    let rect = element.getBoundingClientRect();
+    return rect.bottom + window.pageYOffset;
 }
