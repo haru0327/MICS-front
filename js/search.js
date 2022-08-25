@@ -46,7 +46,7 @@ function PullMessage(MICS_class){
     //console.log("[Info:debug] d1, d2 = " + d1 + ", " + d2);
     //ボタン非アクティブ化(2重リクエスト防止)
     let serch_button = document.getElementsByClassName('searchbutton')[0].childNodes.item(0);
-    serch_button.value = 'Loading';
+    serch_button.value = 'Loading…';
     ConnectingNow = true;
 
     axios.get('https://fast-fjord-64260.herokuapp.com/camera-data', {
