@@ -65,11 +65,11 @@ function PullMessage(MICS_class){
     }).catch(err => {
       //サーバーエラー
       if(err.message == "Network Error"){
-        let error_msg = `[Error] Could not connect to server (HTTP Status: ${status} ${statusText})`;
         const {
           status,
           statusText
         } = err.response;
+        let error_msg = `[Error] Could not connect to server (HTTP Status: ${status} ${statusText})`;
         console.log(error_msg);
         alert(error_msg)
       }
