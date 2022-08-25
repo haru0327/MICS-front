@@ -15,16 +15,16 @@ function PullMessage(MICS_class){
   if(ConnectingNow == false){
     const datebox1 = document.getElementById("input-date1");
     const timebox1 = document.getElementById("input-time1");
-  
+
     const datebox2 = document.getElementById("input-date2");
     const timebox2 = document.getElementById("input-time2");
-  
+
     const inputdateValue1 = datebox1.value;
     const inputtimeValue1 = timebox1.value;
     const datetime1=inputdateValue1+" "+inputtimeValue1
     d1=Date.parse(datetime1)/1000
-    
-  
+
+
     const inputdateValue2 = datebox2.value;
     const inputtimeValue2 = timebox2.value;
     const datetime2=inputdateValue2+" "+inputtimeValue2
@@ -35,12 +35,12 @@ function PullMessage(MICS_class){
       alert("時間指定の範囲を1ヶ月以内にしてください。")
       return;
     }
-     
+
     /*//出力用のp要素にメッセージを表示（テスト用） 
     const output = "検索期間は" +d1+"から"+d2+"です。";
     document.getElementById("output-message").innerHTML = output;
     //*/
-  
+
     //通信をおこなってデータゲット
     console.log("[Info] Connect to server");
     //console.log("[Info:debug] d1, d2 = " + d1 + ", " + d2);
@@ -48,7 +48,7 @@ function PullMessage(MICS_class){
     let serch_button = document.getElementsByClassName('searchbutton')[0].childNodes.item(0);
     serch_button.value = 'Loading';
     ConnectingNow = true;
-  
+
     axios.get('https://fast-fjord-64260.herokuapp.com/camera-data', {
       params: {
         start_time: d1,

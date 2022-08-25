@@ -502,7 +502,7 @@ footer{
         position:relative;
         left:0em;
         background-color: white;
-    
+
         background: white;
         border-bottom: solid 3px #bdc0c3;
         border-left:solid 2px #bdc0c3 ;
@@ -553,7 +553,7 @@ footer{
         margin:0 auto;
         position:relative;
         top:9%;
-    
+
         background: white;
         border-bottom: solid 3px #bdc0c3;
         border-left:solid 2px #bdc0c3 ;
@@ -567,7 +567,7 @@ footer{
         margin:0 auto;
         position:relative;
         top:11%;
-    
+
         background: white;
         border-bottom: solid 3px #bdc0c3;
         border-left:solid 2px #bdc0c3 ;
@@ -626,8 +626,6 @@ footer{
         position:relative;
         top:1.5%;
         text-align: center;
-         
-        
         border-bottom: solid 3px #bdc0c3;
         border-left:solid 2px #bdc0c3 ;
         border-radius: 9px;
