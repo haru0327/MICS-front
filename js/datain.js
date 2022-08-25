@@ -123,7 +123,7 @@ class DataIN{
 
 
         //時間変化ラベル作成    
-        for(let h=user_intime ;h<user_outtime+div_time ;h=h+div_time){
+        for(let h=user_intime-32400 ;h<(user_outtime-32400)+div_time ;h=h+div_time){
             label_unix_in.push(h);
         };
 

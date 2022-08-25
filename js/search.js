@@ -22,13 +22,13 @@ function PullMessage(MICS_class){
     const inputdateValue1 = datebox1.value;
     const inputtimeValue1 = timebox1.value;
     const datetime1=inputdateValue1+" "+inputtimeValue1
-    d1=Date.parse(datetime1)/1000
+    d1=(Date.parse(datetime1)/1000)+32400
 
 
     const inputdateValue2 = datebox2.value;
     const inputtimeValue2 = timebox2.value;
     const datetime2=inputdateValue2+" "+inputtimeValue2
-    d2=Date.parse(datetime2)/1000
+    d2=(Date.parse(datetime2)/1000)+32400
 
     //時間範囲の確認
     if(d2 - d1 > 2678400){
