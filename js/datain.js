@@ -530,7 +530,6 @@ class DataIN{
             var D23_60_data_in= femail_all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); D23_60_data.push(D23_60_data_in.length);
             
             };
-             
             console.log(backdata_arr)
          }
         
