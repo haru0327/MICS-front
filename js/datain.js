@@ -9,8 +9,8 @@ class DataIN{
         var backdata_arr = JSON.parse(InterestData);
         
         //ユーザーの指定した時間計算
-        var user_intime =d1+32400;
-        var user_outtime=d2+32400;
+        var user_intime =d1;
+        var user_outtime=d2;
 
         var ja_user_intime =d1
         var ja_user_outtime=d2
@@ -531,6 +531,7 @@ class DataIN{
             
             };
              
+            console.log(backdata_arr)
          }
         
         
@@ -544,7 +545,7 @@ class DataIN{
              var div_time=3600;
              var plot_num=24;
 
-             
+
              //時間変化ラベル作成    
              for(let h=ja_user_intime ;h<ja_user_outtime+div_time ;h=h+div_time){
                  label_unix_in.push(h)
@@ -757,7 +758,7 @@ class DataIN{
              
              };
            
-                  
+             console.log(backdata_arr)
              };
         
             //console.log(label_time_arr)
