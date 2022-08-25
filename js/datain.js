@@ -710,7 +710,7 @@ class DataIN{
             
             var backdata_arr_time=[];
             
-            for(let i=0 ;i<86400 ;i=i+10800){
+            for(let i=0 ;i<86400 ;i=i+(86400/21)){
                 var backdata_arr_time_in= backdata_arr.filter(x => x.end_time_unix <= user_intime+(i+3600) && x.end_time_unix > user_intime+i );
                 backdata_arr_time.push(backdata_arr_time_in);
             }
