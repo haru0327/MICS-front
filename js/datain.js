@@ -23,11 +23,12 @@ class DataIN{
 console.log("info 1d~31d")
 
 
-            //時間変化ラベル作成
-            for(let h=0 ;h<user_outtime ;h=h+86400){
-                label_unix_in.push(user_intime+h)
+            //時間変化ラベル作成 
+            for(let h=user_intime ;h<user_outtime+86400 ;h=h+86400){
+                label_unix_in.push(h)
+                console.log("info front ",label_unix_in)
             }
-            
+            console.log("info ",label_unix_in)
 
             var label_time_arr=[]//ラベル名
   
@@ -53,17 +54,10 @@ console.log("info 1d~31d")
             //関心度で分ける
             var int_line=70
             
-            
-            var all_max_int_arr  = backdata_arr.filter(x => x.interested <=100 && x.interested>=int_line );
-        
-        
-            var all_nomal_int_arr= backdata_arr.filter(x => x.interested <int_line && x.interested>0 );
-        
-        
-            var all_all_int_arr  = backdata_arr.filter(x => x.interested <=100 && x.interested>0 );
-        
-        
-            var all_not_int_arr  = backdata_arr.filter(x => x.interested ===0 );
+        var all_max_int_arr  = backdata_arr.filter(x => x.interested <=100 && x.interested>=int_line );
+        var all_nomal_int_arr= backdata_arr.filter(x => x.interested <int_line && x.interested>0 );
+        var all_all_int_arr  = backdata_arr.filter(x => x.interested <=100 && x.interested>0 );
+        var all_not_int_arr  = backdata_arr.filter(x => x.interested ===0 );
             
             
             
