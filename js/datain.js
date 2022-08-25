@@ -170,12 +170,12 @@ class DataIN{
         let B1_femail_50_data_in = all_femail_max_int_arr_in.filter(x => x.age < 60 && x.age>=50);       
         let B1_femail_60_data_in = all_femail_max_int_arr_in.filter(x => x.age <= 120 && x.age>=60);
 
-        B1_10_data=[B1_mail_10_data_in.length,B1_femail_10_data_in.length];
-        B1_20_data=[B1_mail_20_data_in.length,B1_femail_20_data_in.length];
-        B1_30_data=[B1_mail_30_data_in.length,B1_femail_30_data_in.length];
-        B1_40_data=[B1_mail_40_data_in.length,B1_femail_40_data_in.length];
-        B1_50_data=[B1_mail_50_data_in.length,B1_femail_50_data_in.length];
-        B1_60_data=[B1_mail_60_data_in.length,B1_femail_60_data_in.length];
+        B1_10_data = [B1_mail_10_data_in.length,B1_femail_10_data_in.length];
+        B1_20_data = [B1_mail_20_data_in.length,B1_femail_20_data_in.length];
+        B1_30_data = [B1_mail_30_data_in.length,B1_femail_30_data_in.length];
+        B1_40_data = [B1_mail_40_data_in.length,B1_femail_40_data_in.length];
+        B1_50_data = [B1_mail_50_data_in.length,B1_femail_50_data_in.length];
+        B1_60_data = [B1_mail_60_data_in.length,B1_femail_60_data_in.length];
 
         //B2
         let B2_mail_10_data_in   = all_mail_all_int_arr_in.filter(x => x.age < 20);           
@@ -191,12 +191,12 @@ class DataIN{
         let B2_femail_50_data_in = all_femail_all_int_arr_in.filter(x => x.age < 60 && x.age>=50);             
         let B2_femail_60_data_in = all_femail_all_int_arr_in.filter(x => x.age <= 120 && x.age>=60);   
 
-        B2_10_data=[B2_mail_10_data_in.length,B2_femail_10_data_in.length];
-        B2_20_data=[B2_mail_20_data_in.length,B2_femail_20_data_in.length];
-        B2_30_data=[B2_mail_30_data_in.length,B2_femail_30_data_in.length];
-        B2_40_data=[B2_mail_40_data_in.length,B2_femail_40_data_in.length];
-        B2_50_data=[B2_mail_50_data_in.length,B2_femail_50_data_in.length];
-        B2_60_data=[B2_mail_60_data_in.length,B2_femail_60_data_in.length];
+        B2_10_data = [B2_mail_10_data_in.length,B2_femail_10_data_in.length];
+        B2_20_data = [B2_mail_20_data_in.length,B2_femail_20_data_in.length];
+        B2_30_data = [B2_mail_30_data_in.length,B2_femail_30_data_in.length];
+        B2_40_data = [B2_mail_40_data_in.length,B2_femail_40_data_in.length];
+        B2_50_data = [B2_mail_50_data_in.length,B2_femail_50_data_in.length];
+        B2_60_data = [B2_mail_60_data_in.length,B2_femail_60_data_in.length];
 
 
         for(let i=0 ;i<plot_num ;i=i+1){
