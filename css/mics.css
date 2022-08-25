@@ -272,7 +272,7 @@ header{
 }
 .graphB{
     width:85%;
-    height:400px;
+    min-height:400px;
     margin:0 auto;
     position:relative;
     top:5%;
@@ -304,6 +304,7 @@ header{
 }
 .B1inner{
     width:90%;
+    min-height:160px;
     margin-left: 20px;
 }
 .B2{
@@ -322,6 +323,7 @@ header{
 }
 .B2inner{
     width:90%;
+    min-height:160px;
     margin-left: 20px;
 }
 
@@ -447,6 +449,23 @@ header{
 }
 
 
+#back_to_top{
+    border-color:rgb(254, 131, 49);
+    background: rgb(241, 102, 9);
+    color: white;
+    border-radius: 14px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 60px;
+    height: 60px;
+
+    text-align: center;
+    font-size:30px;
+    font-weight: 900;
+}
+
+
 footer{
     display:flex;
     width:100%;
@@ -506,7 +525,6 @@ footer{
 
     .graphB{
         width:85%;
-        height:auto;
         margin:0 auto;
         position:relative;
         top:5%;
