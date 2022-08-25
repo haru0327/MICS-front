@@ -5,36 +5,39 @@ MICS Front
 class DataIN{
     constructor(d1, d2, InterestData){
         
+        //選択期間
         let bet_time=d2-d1;
 
-        //選択期間１日～31日
-        if(bet_time<=2678400 && bet_time>=86400){
-            this.data_process(2678400,86400,31,d1,d2,InterestData);
-            console.log("[Info] 1d~31d");
-        }
-
-        else if(bet_time<10800 && bet_time>=0){
+  
+        //選択期間　0分～3時間
+        if(bet_time<10800 && bet_time>=0){
             this.data_process(10800,600,18,d1,d2,InterestData);
             console.log("[Info] 0~3hour");
         }
-
+        //選択期間　3時間～1日
         else if (bet_time<86400 && bet_time>=10800){
             this.data_process(86400,3600,24,d1,d2,InterestData);
             console.log("[Info] 3h~1d");
+        
         }
+        //選択期間　1日～31日
+        else if(bet_time<=2678400 && bet_time>=86400){
+            this.data_process(2678400,86400,31,d1,d2,InterestData);
+            console.log("[Info] 1d~31d");
+        };
 
     };
 
+    //データ分割関数
     data_process(max_time,div_time,plot_num,user_intime,user_outtime,InterestData){
 
         let backdata_arr = JSON.parse(InterestData);
 
-        let label_time_arr = [];   //ラベル名
-
+        //関心度調整変数
         let max_intline = 45;
         let not_intline = 20;
 
-
+        //graphプロットデータ変数
         let A1_data  = [];
         let A21_data = [];
         let A22_data = [];
@@ -114,9 +117,13 @@ class DataIN{
         
         let femail_all_int_arr = [];
         let mail_all_int_arr   = [];
+        
+        //ラベル変数
+        let label_time_arr = [];
+
 
         //時間変化ラベル作成    
-        for(let h=user_intime ;h<user_outtime+div_time ;h=h+div_time){
+        for(let h=user_intime-32400 ;h<(user_outtime-32400)+div_time ;h=h+div_time){
             label_unix_in.push(h);
         };
 
@@ -125,28 +132,21 @@ class DataIN{
             let label_time_in_2=label_time_in.getMonth()+1+"/"+label_time_in.getDate()+"/ "+label_time_in.getHours()+":"+label_time_in.getMinutes();
             label_time_arr.push(label_time_in_2);
         };
-        
 
-        //時間で分ける
-        for(let i=0 ;i<max_time ;i=i+div_time){
-            let backdata_arr_time_in= backdata_arr.filter(x => x.end_time_unix <= user_intime+(i+div_time) && x.end_time_unix > user_intime+i );
-            backdata_arr_time.push(backdata_arr_time_in);
-        };
-
-
-        //関心度で分ける
+        //関心度分割
         let all_max_int_arr   = backdata_arr.filter(x => x.interested <=100 && x.interested>max_intline );
         let all_nomal_int_arr = backdata_arr.filter(x => x.interested <=max_intline && x.interested>not_intline );
         let all_all_int_arr   = backdata_arr.filter(x => x.interested <=100 && x.interested>not_intline );
         let all_not_int_arr   = backdata_arr.filter(x => x.interested <=not_intline && x.interested>=0  );           
 
 
-        //性別で分ける
+        //性別分割
         let all_mail_max_int_arr_in   = all_max_int_arr.filter(x => x.gender === 0);
         let all_femail_max_int_arr_in = all_max_int_arr.filter(x => x.gender === 1);
         let all_mail_all_int_arr_in   = all_all_int_arr.filter(x => x.gender === 0);
         let all_femail_all_int_arr_in = all_all_int_arr.filter(x => x.gender === 1);
 
+        //時間分割無しのgraphプロット変数in
         //A1
         A1_data = [all_max_int_arr  .length, all_nomal_int_arr.length , all_not_int_arr  .length];
 
@@ -197,6 +197,13 @@ class DataIN{
         B2_40_data = [B2_mail_40_data_in.length,B2_femail_40_data_in.length];
         B2_50_data = [B2_mail_50_data_in.length,B2_femail_50_data_in.length];
         B2_60_data = [B2_mail_60_data_in.length,B2_femail_60_data_in.length];
+
+
+        //時間分割
+        for(let i=0 ;i<max_time ;i=i+div_time){
+            let backdata_arr_time_in= backdata_arr.filter(x => x.end_time_unix <= user_intime+(i+div_time) && x.end_time_unix > user_intime+i );
+            backdata_arr_time.push(backdata_arr_time_in);
+        };
 
 
         for(let i=0 ;i<plot_num ;i=i+1){

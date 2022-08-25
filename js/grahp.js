@@ -628,91 +628,13 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "10代以下",
-                    data:            this.data.D23_10_data,
-                    backgroundColor: "rgba(220,53,69, 0.8)",
-                    borderColor:     "rgba(220,53,69, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    
-                    barPercentage:0.6,
-                    label:           "20代",
-                    data:            this.data.D23_20_data,
-                    backgroundColor: "rgba(255,142,10, 0.8)",
-                    borderColor:     "rgba(255,142,10, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "30代",
-                    data:            this.data.D23_30_data,
-                    backgroundColor: "rgba(255,228,88, 0.8)",
-                    borderColor:     "rgba(255,228,88, 1.0)",
-                    borderWidth:     1,
-                },
-                {
-                    barPercentage:0.6,
-                    label:           "40代",
-                    data:            this.data.D23_40_data,
-                    backgroundColor: "rgba(84,241,100, 0.8)",
-                    borderColor:     "rgba(84,241,100, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "50代",
-                    data:            this.data.D23_50_data,
-                    backgroundColor: "rgba(53,90,220, 0.8)",
-                    borderColor:     "rgba(53,90,220, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    
-                    barPercentage:0.6,
-                    label:           "60代以上",
-                    data:            this.data.D23_60_data,
-                    backgroundColor: "rgba(151,71,255, 0.8)",
-                    borderColor:     "rgba(151,71,255, 1.0)",
-                    borderWidth:     1,
-                }
-                ],
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                    x: {
-                        display:      true,
-                        stacked:      true,
-                        suggestedMax: 100,
-                        suggestedMin: 0,
-                        ticks: {
-                        stepSize: 10,
-                        },
-                    },
-                    y: {
-                        display:      true,
-                        stacked:      true,
-                    }
-                }
-            }
-        });
-    }
-
-    #GrahpD23(){
-        const element = document.getElementById('graph_D23').getContext('2d');
-        const chart = new Chart(element, {
-            type:'bar',
-            data: {labels: this.data.label_time_arr,
-                datasets: [
-                {
-                    barPercentage:0.6,
-                    label:           "10代以下",
                     data:            this.data.D22_10_data,
                     backgroundColor: "rgba(220,53,69, 0.8)",
                     borderColor:     "rgba(220,53,69, 1.0)",
                     borderWidth:     1,
                 }, 
                 {
+                    
                     barPercentage:0.6,
                     label:           "20代",
                     data:            this.data.D22_20_data,
@@ -749,6 +671,84 @@ class MICSGrahp{
                     barPercentage:0.6,
                     label:           "60代以上",
                     data:            this.data.D22_60_data,
+                    backgroundColor: "rgba(151,71,255, 0.8)",
+                    borderColor:     "rgba(151,71,255, 1.0)",
+                    borderWidth:     1,
+                }
+                ],
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                    x: {
+                        display:      true,
+                        stacked:      true,
+                        suggestedMax: 100,
+                        suggestedMin: 0,
+                        ticks: {
+                        stepSize: 10,
+                        },
+                    },
+                    y: {
+                        display:      true,
+                        stacked:      true,
+                    }
+                }
+            }
+        });
+    }
+
+    #GrahpD23(){
+        const element = document.getElementById('graph_D23').getContext('2d');
+        const chart = new Chart(element, {
+            type:'bar',
+            data: {labels: this.data.label_time_arr,
+                datasets: [
+                {
+                    barPercentage:0.6,
+                    label:           "10代以下",
+                    data:            this.data.D23_10_data,
+                    backgroundColor: "rgba(220,53,69, 0.8)",
+                    borderColor:     "rgba(220,53,69, 1.0)",
+                    borderWidth:     1,
+                }, 
+                {
+                    barPercentage:0.6,
+                    label:           "20代",
+                    data:            this.data.D23_20_data,
+                    backgroundColor: "rgba(255,142,10, 0.8)",
+                    borderColor:     "rgba(255,142,10, 1.0)",
+                    borderWidth:     1,
+                }, 
+                {
+                    barPercentage:0.6,
+                    label:           "30代",
+                    data:            this.data.D23_30_data,
+                    backgroundColor: "rgba(255,228,88, 0.8)",
+                    borderColor:     "rgba(255,228,88, 1.0)",
+                    borderWidth:     1,
+                },
+                {
+                    barPercentage:0.6,
+                    label:           "40代",
+                    data:            this.data.D23_40_data,
+                    backgroundColor: "rgba(84,241,100, 0.8)",
+                    borderColor:     "rgba(84,241,100, 1.0)",
+                    borderWidth:     1,
+                }, 
+                {
+                    barPercentage:0.6,
+                    label:           "50代",
+                    data:            this.data.D23_50_data,
+                    backgroundColor: "rgba(53,90,220, 0.8)",
+                    borderColor:     "rgba(53,90,220, 1.0)",
+                    borderWidth:     1,
+                }, 
+                {
+                    
+                    barPercentage:0.6,
+                    label:           "60代以上",
+                    data:            this.data.D23_60_data,
                     backgroundColor: "rgba(151,71,255, 0.8)",
                     borderColor:     "rgba(151,71,255, 1.0)",
                     borderWidth:     1,
