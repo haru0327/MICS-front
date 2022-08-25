@@ -900,7 +900,8 @@ class MICSGrahp{
                 </div>         
             </div>
         </div>`;
-    
+
+        //DOM操作実行
         this.app_element = document.getElementById("app");
         this.app_element.insertAdjacentHTML('afterbegin', this.new_HTML_data);
 
@@ -951,10 +952,12 @@ class MICSGrahp{
     }
 }
 
+//要素の絶対座標を取得(Y, Top)
 function GetAbsolutePositionTopY(element){
     let rect = element.getBoundingClientRect();
     return rect.top + window.pageYOffset;
 }
+//要素の絶対座標を取得(Y, Bottom)
 function GetAbsolutePositionBottomY(element){
     let rect = element.getBoundingClientRect();
     return rect.bottom + window.pageYOffset;

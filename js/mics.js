@@ -12,7 +12,7 @@ class MICS{
         this.is_pulled = false;
         this.container = document.getElementById("app");
     }
-    
+
     //サーバーからデータ取得
     GetMessage(date_first, date_last, interest_data){
         if(interest_data != '[]'){
