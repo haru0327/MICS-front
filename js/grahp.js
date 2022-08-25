@@ -60,7 +60,7 @@ class MICSGrahp{
             type:'pie',
             // データを指定
             data: {
-                labels: ["特に関心有り", "関心有り", "関心なし"],
+                labels: ["特に関心あり", "関心あり", "関心なし"],
                 datasets: [{
                     backgroundColor: [
                     'rgba(220, 53, 69, 1)'  ,
@@ -801,7 +801,7 @@ class MICSGrahp{
                     </div>
                     <div class="A22">
                     <hr noshade> 
-                        <h2>特に関心あり&関心あり</h2>
+                        <h2>特に関心あり & 関心あり</h2>
                         <canvas id="graph_A22" height="100" style="max-height: 290px"></canvas>
                     </div>
                 </div>
@@ -824,7 +824,7 @@ class MICSGrahp{
             <hr noshade> 
             <div class="B2">
                 <div class="B2h2">
-                    <h2>特に関心あり&関心あり</h2>
+                    <h2>特に関心あり & 関心あり</h2>
                 </div>
                 <div class="B2inner">
                     <canvas id="graph_B2" width="90" height="100" style="max-height: 100%"></canvas>
@@ -902,5 +902,60 @@ class MICSGrahp{
         this.app_element = document.getElementById("app");
         this.app_element.insertAdjacentHTML('afterbegin', this.new_HTML_data);
 
+
+        //ページ上部に戻るボタンのイベントを登録
+        window.addEventListener('scroll', function(){
+            let button = document.getElementById("back_to_top");
+            let footer = document.getElementById("footer");
+            console.log(GetAbsolutePositionTopY(footer));
+            if(button.style.visibility == 'hidden'){
+                if(200 < window.scrollY){
+                    button.animate(
+                        [
+                            { opacity: 0 },
+                            { opacity: 1 }
+                        ],
+                        {
+                            duration: 100,
+                            fill: 'forwards'
+                        }
+                    );
+                    button.style.visibility = 'visible';
+                }
+            }else{
+                if(200 >= window.scrollY){
+                    button.animate(
+                        [
+                            { opacity: 1 },
+                            { opacity: 0 }
+                        ],
+                        {
+                            duration: 100,
+                            fill: 'forwards'
+                        }
+                    );
+                    setTimeout(function(){
+                        button.style.visibility = 'hidden';
+                    }, 200);
+                }
+                if(GetAbsolutePositionTopY(footer) < window.innerHeight + window.scrollY){
+                    
+                    button.style.bottom = 30 + (window.innerHeight + window.scrollY - GetAbsolutePositionTopY(footer)) + "px";
+                }else{
+                    button.style.position = "fixed"
+                    button.style.bottom = 30 + "px";
+                    button.style.right = 30 + "px";
+                }
+            }
+        });
     }
+}
+
+function GetAbsolutePositionTopY(element){
+    let rect = element.getBoundingClientRect();
+    return rect.top + window.pageYOffset;
+}
+function GetAbsolutePositionBottomY(element){
+    let rect = element.getBoundingClientRect();
+    return rect.bottom + window.pageYOffset;
 }
