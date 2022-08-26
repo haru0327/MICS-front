@@ -111,8 +111,8 @@ class DataIN{
         };
 
         //関心度分割
-        let all_max_int_arr   = backdata_arr.filter(x => x.interested <= 100 && x.interested > max_intline);
-        let all_nomal_int_arr = backdata_arr.filter(x => x.interested <= max_intline && x.interested > not_intline);
+        let all_max_int_arr   = backdata_arr.filter(x => x.interested <= 100 && x.interested >= max_intline);
+        let all_nomal_int_arr = backdata_arr.filter(x => x.interested < max_intline && x.interested > not_intline);
         let all_all_int_arr   = backdata_arr.filter(x => x.interested <= 100 && x.interested > not_intline);
         let all_not_int_arr   = backdata_arr.filter(x => x.interested <= not_intline && x.interested >= 0);           
 
@@ -182,12 +182,12 @@ class DataIN{
         ]
     }
 
-    #GrahpDFilter(max_int_arr,i,D10_data,D20_data,D30_data,D40_data,D50_data,D60_data){
-        D10_data.push(max_int_arr[i].filter(x => x.age < 20).length); 
-        D20_data.push(max_int_arr[i].filter(x => x.age < 30 && x.age >= 20).length); 
-        D30_data.push(max_int_arr[i].filter(x => x.age < 40 && x.age >= 30).length);
-        D40_data.push(max_int_arr[i].filter(x => x.age < 50 && x.age >= 40).length);
-        D50_data.push(max_int_arr[i].filter(x => x.age < 60 && x.age >= 50).length);
-        D60_data.push(max_int_arr[i].filter(x => x.age <= 120 && x.age >= 60).length);
+    #GrahpDFilter(arr,i,D10_data,D20_data,D30_data,D40_data,D50_data,D60_data){
+        D10_data.push(arr[i].filter(x => x.age < 20).length); 
+        D20_data.push(arr[i].filter(x => x.age < 30 && x.age >= 20).length); 
+        D30_data.push(arr[i].filter(x => x.age < 40 && x.age >= 30).length);
+        D40_data.push(arr[i].filter(x => x.age < 50 && x.age >= 40).length);
+        D50_data.push(arr[i].filter(x => x.age < 60 && x.age >= 50).length);
+        D60_data.push(arr[i].filter(x => x.age <= 120 && x.age >= 60).length);
     }
 };
