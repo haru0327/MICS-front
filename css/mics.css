@@ -219,12 +219,12 @@ header{
     margin:0 auto;
 }
 .graphA2inner {
-    width:90%;
+    width:100%;
     margin:0 auto;
     display:flex;
 }
 .A21{
-    width:45%;
+    width:50%;
     margin:0 auto;
     text-align: center;
 }
@@ -235,25 +235,27 @@ header{
 .A21 hr{
     border:solid 1px #e2e2e2;
     position:relative;
-	left:-14%;
+	left:3%;
     border-radius: 5px;
     width:125%;
     margin:0 auto;
 }
 .A22{
-    width:45%;
+    width:50%;
     margin:0 auto;
     text-align: center;
 }
 .A22 h2{
     color:#5c5c5c;
+    position:relative;
+    left:-10%;
     font-weight: 300;
-    
+    width:120%;
 }
 .A22 hr{
     border:solid 1px #e2e2e2;
     position:relative;
-    left:-12%;
+    left:-29%;
     border-radius: 5px;
     width:125%;
     margin:0 auto;
@@ -474,14 +476,13 @@ footer{
     align-items:center;
 }
 .footertitle{
-    
     margin-left:2%;
     margin-right: auto;
     color: white;
 }
 
 /* レスポンシブ対応 */
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1280px) {
 
     .graphA{
         width:100%;
