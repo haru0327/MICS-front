@@ -124,6 +124,10 @@ header{
     height:36px; 
     width:25%; 
 }
+.searchbutton input:hover{
+    background-color:rgb(197, 101, 38);
+}
+
 .inputarea input{
     
     border-color:rgb(241, 102, 9);
@@ -466,7 +470,9 @@ header{
     font-size:30px;
     font-weight: 900;
 }
-
+#back_to_top:hover{
+    background: rgb(197, 101, 38);
+}
 
 footer{
     display:flex;
