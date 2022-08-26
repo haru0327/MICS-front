@@ -82,3 +82,15 @@ let time2 = document.getElementById("input-time2");
 date1.addEventListener("input", {date: date2, date_set_value: date1.value, set_time_flag: true, time: time2, time_set_value: "23:59", handleEvent: SetDateInput});
 date1.addEventListener("input", {time: time1, time_set_value: "00:00", handleEvent: SetTimeInput});
 date2.addEventListener("input", {time: time2, time_set_value: "00:00", handleEvent: SetTimeInput});
+
+
+//プロットボタン　ホバー
+const hover_button=document.getElementById('hover_button');
+//ホバーした時
+hover_button.addEventListener('mouseover', () => {
+    hover_button.style.background = 'rgb(197, 101, 38)';
+}, false);
+//離れた時
+hover_button.addEventListener('mouseleave', () => {
+    hover_button.style.background = 'rgb(254, 131, 49)';
+}, false);
