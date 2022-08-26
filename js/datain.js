@@ -112,11 +112,11 @@ class DataIN{
         let all_int_arr   = [];
         let not_int_arr   = [];
 
-        let mail_max_int_arr   = [];
-        let femail_max_int_arr = [];
+        let male_max_int_arr   = [];
+        let female_max_int_arr = [];
         
-        let femail_all_int_arr = [];
-        let mail_all_int_arr   = [];
+        let male_all_int_arr   = [];
+        let female_all_int_arr = [];
         
         //ラベル変数
         let label_time_arr = [];
@@ -143,62 +143,62 @@ class DataIN{
 
 
         //性別分割
-        let all_mail_max_int_arr_in   = all_max_int_arr.filter(x => x.gender === 0);
-        let all_femail_max_int_arr_in = all_max_int_arr.filter(x => x.gender === 1);
-        let all_mail_all_int_arr_in   = all_all_int_arr.filter(x => x.gender === 0);
-        let all_femail_all_int_arr_in = all_all_int_arr.filter(x => x.gender === 1);
+        let all_male_max_int_arr_in   = all_max_int_arr.filter(x => x.gender === 0);
+        let all_female_max_int_arr_in = all_max_int_arr.filter(x => x.gender === 1);
+        let all_male_all_int_arr_in   = all_all_int_arr.filter(x => x.gender === 0);
+        let all_female_all_int_arr_in = all_all_int_arr.filter(x => x.gender === 1);
 
         //時間分割無しのgraphプロット変数in
         //A1
         A1_data = [all_max_int_arr  .length, all_nomal_int_arr.length , all_not_int_arr  .length];
 
         //A21
-        A21_data = [all_mail_max_int_arr_in.length ,all_femail_max_int_arr_in.length];
+        A21_data = [all_male_max_int_arr_in.length ,all_female_max_int_arr_in.length];
 
         //A22
-        A22_data = [all_mail_all_int_arr_in.length ,all_femail_all_int_arr_in.length] ;    
+        A22_data = [all_male_all_int_arr_in.length ,all_female_all_int_arr_in.length] ;    
 
         //B1
-        let B1_mail_10_data_in   = all_mail_max_int_arr_in.filter(x => x.age < 20);    
-        let B1_mail_20_data_in   = all_mail_max_int_arr_in.filter(x => x.age < 30 && x.age>=20);    
-        let B1_mail_30_data_in   = all_mail_max_int_arr_in.filter(x => x.age < 40 && x.age>=30);
-        let B1_mail_40_data_in   = all_mail_max_int_arr_in.filter(x => x.age < 50 && x.age>=40);
-        let B1_mail_50_data_in   = all_mail_max_int_arr_in.filter(x => x.age < 60 && x.age>=50);    
-        let B1_mail_60_data_in   = all_mail_max_int_arr_in.filter(x => x.age <= 120 && x.age>=60);
-        let B1_femail_10_data_in = all_femail_max_int_arr_in.filter(x => x.age < 20);      
-        let B1_femail_20_data_in = all_femail_max_int_arr_in.filter(x => x.age < 30 && x.age>=20);      
-        let B1_femail_30_data_in = all_femail_max_int_arr_in.filter(x => x.age < 40 && x.age>=30);  
-        let B1_femail_40_data_in = all_femail_max_int_arr_in.filter(x => x.age < 50 && x.age>=40);  
-        let B1_femail_50_data_in = all_femail_max_int_arr_in.filter(x => x.age < 60 && x.age>=50);       
-        let B1_femail_60_data_in = all_femail_max_int_arr_in.filter(x => x.age <= 120 && x.age>=60);
+        let B1_male_10_data_in   = all_male_max_int_arr_in.filter(x => x.age < 20);    
+        let B1_male_20_data_in   = all_male_max_int_arr_in.filter(x => x.age < 30 && x.age>=20);    
+        let B1_male_30_data_in   = all_male_max_int_arr_in.filter(x => x.age < 40 && x.age>=30);
+        let B1_male_40_data_in   = all_male_max_int_arr_in.filter(x => x.age < 50 && x.age>=40);
+        let B1_male_50_data_in   = all_male_max_int_arr_in.filter(x => x.age < 60 && x.age>=50);    
+        let B1_male_60_data_in   = all_male_max_int_arr_in.filter(x => x.age <= 120 && x.age>=60);
+        let B1_female_10_data_in = all_female_max_int_arr_in.filter(x => x.age < 20);      
+        let B1_female_20_data_in = all_female_max_int_arr_in.filter(x => x.age < 30 && x.age>=20);      
+        let B1_female_30_data_in = all_female_max_int_arr_in.filter(x => x.age < 40 && x.age>=30);  
+        let B1_female_40_data_in = all_female_max_int_arr_in.filter(x => x.age < 50 && x.age>=40);  
+        let B1_female_50_data_in = all_female_max_int_arr_in.filter(x => x.age < 60 && x.age>=50);       
+        let B1_female_60_data_in = all_female_max_int_arr_in.filter(x => x.age <= 120 && x.age>=60);
 
-        B1_10_data = [B1_mail_10_data_in.length,B1_femail_10_data_in.length];
-        B1_20_data = [B1_mail_20_data_in.length,B1_femail_20_data_in.length];
-        B1_30_data = [B1_mail_30_data_in.length,B1_femail_30_data_in.length];
-        B1_40_data = [B1_mail_40_data_in.length,B1_femail_40_data_in.length];
-        B1_50_data = [B1_mail_50_data_in.length,B1_femail_50_data_in.length];
-        B1_60_data = [B1_mail_60_data_in.length,B1_femail_60_data_in.length];
+        B1_10_data = [B1_male_10_data_in.length,B1_female_10_data_in.length];
+        B1_20_data = [B1_male_20_data_in.length,B1_female_20_data_in.length];
+        B1_30_data = [B1_male_30_data_in.length,B1_female_30_data_in.length];
+        B1_40_data = [B1_male_40_data_in.length,B1_female_40_data_in.length];
+        B1_50_data = [B1_male_50_data_in.length,B1_female_50_data_in.length];
+        B1_60_data = [B1_male_60_data_in.length,B1_female_60_data_in.length];
 
         //B2
-        let B2_mail_10_data_in   = all_mail_all_int_arr_in.filter(x => x.age < 20);           
-        let B2_mail_20_data_in   = all_mail_all_int_arr_in.filter(x => x.age < 30 && x.age>=20);           
-        let B2_mail_30_data_in   = all_mail_all_int_arr_in.filter(x => x.age < 40 && x.age>=30);       
-        let B2_mail_40_data_in   = all_mail_all_int_arr_in.filter(x => x.age < 50 && x.age>=40);       
-        let B2_mail_50_data_in   = all_mail_all_int_arr_in.filter(x => x.age < 60 && x.age>=50);            
-        let B2_mail_60_data_in   = all_mail_all_int_arr_in.filter(x => x.age <= 120 && x.age>=60);      
-        let B2_femail_10_data_in = all_femail_all_int_arr_in.filter(x => x.age < 20);            
-        let B2_femail_20_data_in = all_femail_all_int_arr_in.filter(x => x.age < 30 && x.age>=20);            
-        let B2_femail_30_data_in = all_femail_all_int_arr_in.filter(x => x.age < 40 && x.age>=30);        
-        let B2_femail_40_data_in = all_femail_all_int_arr_in.filter(x => x.age < 50 && x.age>=40);        
-        let B2_femail_50_data_in = all_femail_all_int_arr_in.filter(x => x.age < 60 && x.age>=50);             
-        let B2_femail_60_data_in = all_femail_all_int_arr_in.filter(x => x.age <= 120 && x.age>=60);   
+        let B2_male_10_data_in   = all_male_all_int_arr_in.filter(x => x.age < 20);           
+        let B2_male_20_data_in   = all_male_all_int_arr_in.filter(x => x.age < 30 && x.age>=20);           
+        let B2_male_30_data_in   = all_male_all_int_arr_in.filter(x => x.age < 40 && x.age>=30);       
+        let B2_male_40_data_in   = all_male_all_int_arr_in.filter(x => x.age < 50 && x.age>=40);       
+        let B2_male_50_data_in   = all_male_all_int_arr_in.filter(x => x.age < 60 && x.age>=50);            
+        let B2_male_60_data_in   = all_male_all_int_arr_in.filter(x => x.age <= 120 && x.age>=60);      
+        let B2_female_10_data_in = all_female_all_int_arr_in.filter(x => x.age < 20);            
+        let B2_female_20_data_in = all_female_all_int_arr_in.filter(x => x.age < 30 && x.age>=20);            
+        let B2_female_30_data_in = all_female_all_int_arr_in.filter(x => x.age < 40 && x.age>=30);        
+        let B2_female_40_data_in = all_female_all_int_arr_in.filter(x => x.age < 50 && x.age>=40);        
+        let B2_female_50_data_in = all_female_all_int_arr_in.filter(x => x.age < 60 && x.age>=50);             
+        let B2_female_60_data_in = all_female_all_int_arr_in.filter(x => x.age <= 120 && x.age>=60);   
 
-        B2_10_data = [B2_mail_10_data_in.length,B2_femail_10_data_in.length];
-        B2_20_data = [B2_mail_20_data_in.length,B2_femail_20_data_in.length];
-        B2_30_data = [B2_mail_30_data_in.length,B2_femail_30_data_in.length];
-        B2_40_data = [B2_mail_40_data_in.length,B2_femail_40_data_in.length];
-        B2_50_data = [B2_mail_50_data_in.length,B2_femail_50_data_in.length];
-        B2_60_data = [B2_mail_60_data_in.length,B2_femail_60_data_in.length];
+        B2_10_data = [B2_male_10_data_in.length,B2_female_10_data_in.length];
+        B2_20_data = [B2_male_20_data_in.length,B2_female_20_data_in.length];
+        B2_30_data = [B2_male_30_data_in.length,B2_female_30_data_in.length];
+        B2_40_data = [B2_male_40_data_in.length,B2_female_40_data_in.length];
+        B2_50_data = [B2_male_50_data_in.length,B2_female_50_data_in.length];
+        B2_60_data = [B2_male_60_data_in.length,B2_female_60_data_in.length];
 
 
         //時間分割
@@ -223,17 +223,17 @@ class DataIN{
             not_int_arr.push(not_int_arr_in);
 
             //性別分割
-            let mail_max_int_arr_in= max_int_arr[i].filter(x => x.gender === 0);
-            mail_max_int_arr.push(mail_max_int_arr_in);
+            let male_max_int_arr_in= max_int_arr[i].filter(x => x.gender === 0);
+            male_max_int_arr.push(male_max_int_arr_in);
             
-            let femail_max_int_arr_in= max_int_arr[i].filter(x => x.gender === 1);
-            femail_max_int_arr.push(femail_max_int_arr_in);
+            let female_max_int_arr_in= max_int_arr[i].filter(x => x.gender === 1);
+            female_max_int_arr.push(female_max_int_arr_in);
 
-            let mail_all_int_arr_in= all_int_arr[i].filter(x => x.gender === 0);
-            mail_all_int_arr.push(mail_all_int_arr_in);
+            let male_all_int_arr_in= all_int_arr[i].filter(x => x.gender === 0);
+            male_all_int_arr.push(male_all_int_arr_in);
             
-            let femail_all_int_arr_in= all_int_arr[i].filter(x => x.gender === 1);
-            femail_all_int_arr.push(femail_all_int_arr_in);
+            let female_all_int_arr_in= all_int_arr[i].filter(x => x.gender === 1);
+            female_all_int_arr.push(female_all_int_arr_in);
 
 
             //プロットデータ作成
@@ -261,41 +261,41 @@ class DataIN{
             D11_60_data.push(D11_60_data_in.length);
 
 
-            let D12_10_data_in = mail_max_int_arr[i].filter(x => x.age < 20);                
+            let D12_10_data_in = male_max_int_arr[i].filter(x => x.age < 20);                
             D12_10_data.push(D12_10_data_in.length);
 
-            let D12_20_data_in = mail_max_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
+            let D12_20_data_in = male_max_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
             D12_20_data.push(D12_20_data_in.length);
 
-            let D12_30_data_in = mail_max_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
+            let D12_30_data_in = male_max_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
             D12_30_data.push(D12_30_data_in.length);
 
-            let D12_40_data_in = mail_max_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
+            let D12_40_data_in = male_max_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
             D12_40_data.push(D12_40_data_in.length);
 
-            let D12_50_data_in = mail_max_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
+            let D12_50_data_in = male_max_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
             D12_50_data.push(D12_50_data_in.length);
 
-            let D12_60_data_in = mail_max_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
+            let D12_60_data_in = male_max_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
             D12_60_data.push(D12_60_data_in.length);
 
 
-            let D13_10_data_in = femail_max_int_arr[i].filter(x => x.age < 20);                
+            let D13_10_data_in = female_max_int_arr[i].filter(x => x.age < 20);                
             D13_10_data.push(D13_10_data_in.length);
 
-            let D13_20_data_in = femail_max_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
+            let D13_20_data_in = female_max_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
             D13_20_data.push(D13_20_data_in.length);
 
-            let D13_30_data_in = femail_max_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
+            let D13_30_data_in = female_max_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
             D13_30_data.push(D13_30_data_in.length);
 
-            let D13_40_data_in = femail_max_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
+            let D13_40_data_in = female_max_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
             D13_40_data.push(D13_40_data_in.length);
 
-            let D13_50_data_in = femail_max_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
+            let D13_50_data_in = female_max_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
             D13_50_data.push(D13_50_data_in.length);
 
-            let D13_60_data_in = femail_max_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
+            let D13_60_data_in = female_max_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
             D13_60_data.push(D13_60_data_in.length);
 
 
@@ -318,41 +318,41 @@ class DataIN{
             D21_60_data.push(D21_60_data_in.length);
 
 
-            let D22_10_data_in = mail_all_int_arr[i].filter(x => x.age < 20);                
+            let D22_10_data_in = male_all_int_arr[i].filter(x => x.age < 20);                
             D22_10_data.push(D22_10_data_in.length);
 
-            let D22_20_data_in = mail_all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
+            let D22_20_data_in = male_all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
             D22_20_data.push(D22_20_data_in.length);
 
-            let D22_30_data_in = mail_all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
+            let D22_30_data_in = male_all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
             D22_30_data.push(D22_30_data_in.length);
 
-            let D22_40_data_in = mail_all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
+            let D22_40_data_in = male_all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
             D22_40_data.push(D22_40_data_in.length);
 
-            let D22_50_data_in = mail_all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
+            let D22_50_data_in = male_all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
             D22_50_data.push(D22_50_data_in.length);
 
-            let D22_60_data_in = mail_all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
+            let D22_60_data_in = male_all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
             D22_60_data.push(D22_60_data_in.length);
 
 
-            let D23_10_data_in = femail_all_int_arr[i].filter(x => x.age < 20);                
+            let D23_10_data_in = female_all_int_arr[i].filter(x => x.age < 20);                
             D23_10_data.push(D23_10_data_in.length);
 
-            let D23_20_data_in = femail_all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
+            let D23_20_data_in = female_all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
             D23_20_data.push(D23_20_data_in.length);
 
-            let D23_30_data_in = femail_all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
+            let D23_30_data_in = female_all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
             D23_30_data.push(D23_30_data_in.length);
 
-            let D23_40_data_in = femail_all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
+            let D23_40_data_in = female_all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
             D23_40_data.push(D23_40_data_in.length);
 
-            let D23_50_data_in = femail_all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
+            let D23_50_data_in = female_all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
             D23_50_data.push(D23_50_data_in.length);
 
-            let D23_60_data_in = femail_all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
+            let D23_60_data_in = female_all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
             D23_60_data.push(D23_60_data_in.length);
         };
 
