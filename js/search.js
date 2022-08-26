@@ -24,7 +24,6 @@ function PullMessage(MICS_class){
     const datetime1=inputdateValue1+" "+inputtimeValue1
     d1=(Date.parse(datetime1)/1000)+32400
 
-
     const inputdateValue2 = datebox2.value;
     const inputtimeValue2 = timebox2.value;
     const datetime2=inputdateValue2+" "+inputtimeValue2
@@ -36,14 +35,9 @@ function PullMessage(MICS_class){
       return;
     }
 
-    /*//出力用のp要素にメッセージを表示（テスト用） 
-    const output = "検索期間は" +d1+"から"+d2+"です。";
-    document.getElementById("output-message").innerHTML = output;
-    //*/
-
     //通信をおこなってデータゲット
     console.log("[Info] Connect to server");
-    //console.log("[Info:debug] d1, d2 = " + d1 + ", " + d2);
+
     //ボタン非アクティブ化(2重リクエスト防止)
     let serch_button = document.getElementsByClassName('searchbutton')[0].childNodes.item(0);
     serch_button.value = 'Loading…';
