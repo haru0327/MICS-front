@@ -112,9 +112,9 @@ class DataIN{
 
         //関心度分割
         let all_max_int_arr   = backdata_arr.filter(x => x.interested <= 100 && x.interested >= max_intline);
-        let all_nomal_int_arr = backdata_arr.filter(x => x.interested < max_intline && x.interested > not_intline);
-        let all_all_int_arr   = backdata_arr.filter(x => x.interested <= 100 && x.interested > not_intline);
-        let all_not_int_arr   = backdata_arr.filter(x => x.interested <= not_intline && x.interested >= 0);           
+        let all_nomal_int_arr = backdata_arr.filter(x => x.interested < max_intline && x.interested >= not_intline);
+        let all_all_int_arr   = backdata_arr.filter(x => x.interested <= 100 && x.interested >= not_intline);
+        let all_not_int_arr   = backdata_arr.filter(x => x.interested < not_intline && x.interested >= 0);           
 
         //性別分割
         let all_male_max_int_arr_in   = all_max_int_arr.filter(x => x.gender === 0);
@@ -146,9 +146,9 @@ class DataIN{
         for(let i = 0; i < plot_num; i = i + 1){
             //関心度分割
             max_int_arr.push(backdata_arr_time[i].filter(x => x.interested <= 100 && x.interested >= max_intline));
-            nomal_int_arr.push(backdata_arr_time[i].filter(x => x.interested < max_intline && x.interested > not_intline));
-            all_int_arr.push(backdata_arr_time[i].filter(x => x.interested <= 100 && x.interested > not_intline));
-            not_int_arr.push(backdata_arr_time[i].filter(x => x.interested <= not_intline && x.interested >= 0));
+            nomal_int_arr.push(backdata_arr_time[i].filter(x => x.interested < max_intline && x.interested >= not_intline));
+            all_int_arr.push(backdata_arr_time[i].filter(x => x.interested <= 100 && x.interested >= not_intline));
+            not_int_arr.push(backdata_arr_time[i].filter(x => x.interested < not_intline && x.interested >= 0));
 
             //性別分割
             male_max_int_arr.push(max_int_arr[i].filter(x => x.gender === 0));
