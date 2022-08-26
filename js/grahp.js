@@ -809,11 +809,9 @@ class MICSGrahp{
             </div>                     
         </div>
 
-
         <div class="graphB" id="graphB">
             <div class="graphBtitle">
                 <h1>関心度別男女年齢比</h1>
-                
             </div>
             <hr noshade> 
             <div class="B1">
@@ -837,10 +835,8 @@ class MICSGrahp{
         <div class="graphC" id="graphC">
             <div class="graphCtitle">
                 <h1>関心度時間推移</h1>
-                
             </div>
             <div><hr noshade></div>
-            
             <div class="C1">
                 <canvas id="graph_C1" width="100" height="300" style="max-height: 100%"></canvas>
             </div>
@@ -849,7 +845,6 @@ class MICSGrahp{
         <div class="graphD1" id="graphD1">
             <div class="graphD1title">
                 <h1>【特に関心あり】年齢比時間推移</h1>
-                
             </div>
             <hr noshade> 
             <div class="graphD11">
