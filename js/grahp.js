@@ -39,17 +39,17 @@ class MICSGrahp{
     //グラフの描画
     #LoadGrahps(){
         this.#GrahpA1();
-        this.#GrahpA21();
-        this.#GrahpA22();
-        this.#GrahpB1();
-        this.#GrahpB2();
+        this.#GrahpA2('graph_A21',this.data.A21_data);
+        this.#GrahpA2('graph_A22',this.data.A22_data);
+        this.#GrahpB('graph_B1',this.data.B1_10_data,this.data.B1_20_data,this.data.B1_30_data,this.data.B1_40_data,this.data.B1_50_data,this.data.B1_60_data);
+        this.#GrahpB('graph_B2',this.data.B2_10_data,this.data.B2_20_data,this.data.B2_30_data,this.data.B2_40_data,this.data.B2_50_data,this.data.B2_60_data);
         this.#GrahpC1();
-        this.#GrahpD11();
-        this.#GrahpD12();
-        this.#GrahpD13();
-        this.#GrahpD21();
-        this.#GrahpD22();
-        this.#GrahpD23();
+        this.#GrahpD('graph_D11',this.data.D11_10_data,this.data.D11_20_data,this.data.D11_30_data,this.data.D11_40_data,this.data.D11_50_data,this.data.D11_60_data);
+        this.#GrahpD('graph_D12',this.data.D12_10_data,this.data.D12_20_data,this.data.D12_30_data,this.data.D12_40_data,this.data.D12_50_data,this.data.D12_60_data);
+        this.#GrahpD('graph_D13',this.data.D13_10_data,this.data.D13_20_data,this.data.D13_30_data,this.data.D13_40_data,this.data.D13_50_data,this.data.D13_60_data);
+        this.#GrahpD('graph_D21',this.data.D21_10_data,this.data.D21_20_data,this.data.D21_30_data,this.data.D21_40_data,this.data.D21_50_data,this.data.D21_60_data);
+        this.#GrahpD('graph_D22',this.data.D22_10_data,this.data.D22_20_data,this.data.D22_30_data,this.data.D22_40_data,this.data.D22_50_data,this.data.D22_60_data);
+        this.#GrahpD('graph_D23',this.data.D23_10_data,this.data.D23_20_data,this.data.D23_30_data,this.data.D23_40_data,this.data.D23_50_data,this.data.D23_60_data);
     }
 
     //それぞれのグラフを表示する関数
@@ -58,7 +58,6 @@ class MICSGrahp{
         const element = document.getElementById('graph_A1').getContext('2d');
         const chart = new Chart(element, {
             type:'pie',
-            // データを指定
             data: {
                 labels: ["特に関心あり", "関心あり", "関心なし"],
                 datasets: [{
@@ -73,42 +72,25 @@ class MICSGrahp{
        });
     }
 
-    #GrahpA21(){
-        const element = document.getElementById('graph_A21').getContext('2d');
+    #GrahpA2(id, data){
+        const element = document.getElementById(id).getContext('2d');
         const chart = new Chart(element, {
             type:'pie',
             data: {
                 labels: ["女性", "男性"],
                 datasets: [{
-                  backgroundColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)'
-                  ],
-                  data: this.data.A21_data
+                    backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                    ],
+                    data: data
                 }]
             },
        });
     }
 
-    #GrahpA22(){
-        const element = document.getElementById('graph_A22').getContext('2d');
-        const chart = new Chart(element, {
-            type:'pie',
-            data: {
-                labels: ["女性", "男性"],
-                datasets: [{
-                  backgroundColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)'
-                  ],
-                  data: this.data.A22_data
-                }]
-            },
-       });
-    }
-
-    #GrahpB1(){
-        const element = document.getElementById('graph_B1').getContext('2d');
+    #GrahpB(id, data_10, data_20, data_30, data_40, data_50, data_60){
+        const element = document.getElementById(id).getContext('2d');
         Chart.register(ChartjsPluginStacked100.default);
         const chart = new Chart(element, {
             type:'bar',
@@ -118,7 +100,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "10代以下",
-                    data:            this.data.B1_10_data,
+                    data:            data_10,
                     backgroundColor: "rgba(220,53,69, 0.8)",
                     borderColor:     "rgba(220,53,69, 1.0)",
                     borderWidth:     1,
@@ -126,7 +108,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "20代",
-                    data:            this.data.B1_20_data,
+                    data:            data_20,
                     backgroundColor: "rgba(255,142,10, 0.8)",
                     borderColor:     "rgba(255,142,10, 1.0)",
                     borderWidth:     1,
@@ -134,7 +116,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "30代",
-                    data:            this.data.B1_30_data,
+                    data:            data_30,
                     backgroundColor: "rgba(255,228,88, 0.8)",
                     borderColor:     "rgba(255,228,88, 1.0)",
                     borderWidth:     1,
@@ -142,7 +124,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "40代",
-                    data:            this.data.B1_40_data,
+                    data:            data_40,
                     backgroundColor: "rgba(84,241,100, 0.8)",
                     borderColor:     "rgba(84,241,100, 1.0)",
                     borderWidth:     1,
@@ -150,7 +132,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "50代",
-                    data:            this.data.B1_50_data,
+                    data:            data_50,
                     backgroundColor: "rgba(53,90,220, 0.8)",
                     borderColor:     "rgba(53,90,220, 1.0)",
                     borderWidth:     1,
@@ -158,12 +140,11 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "60代以上",
-                    data:            this.data.B1_60_data,
+                    data:            data_60,
                     backgroundColor: "rgba(151,71,255, 0.8)",
                     borderColor:     "rgba(151,71,255, 1.0)",
                     borderWidth:     1,
-                },
-                ],
+                }],
             },
             options: {
                 responsive: true,
@@ -171,78 +152,7 @@ class MICSGrahp{
                 plugins: {
                     stacked100: { enable: true },
                 },
-                
             },
-       });
-    }
-
-    #GrahpB2(){
-        const element = document.getElementById('graph_B2').getContext('2d')
-        Chart.register(ChartjsPluginStacked100.default);
-        const chart = new Chart(element, {
-            type:'bar',
-            data: {
-                labels: ["女性", "男性"],
-                datasets: [
-                  {
-                    barPercentage:0.6,
-                    label:           "10代以下",
-                    data:            this.data.B2_10_data,
-                    backgroundColor: "rgba(220,53,69, 0.8)",
-                    borderColor:     "rgba(220,53,69, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "20代",
-                    data:            this.data.B2_20_data,
-                    backgroundColor: "rgba(255,142,10, 0.8)",
-                    borderColor:     "rgba(255,142,10, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "30代",
-                    data:            this.data.B2_30_data,
-                    backgroundColor: "rgba(255,228,88, 0.8)",
-                    borderColor:     "rgba(255,228,88, 1.0)",
-                    borderWidth:     1,
-                },
-                {
-                    barPercentage:0.6,
-                    label:           "40代",
-                    data:            this.data.B2_40_data,
-                    backgroundColor: "rgba(84,241,100, 0.8)",
-                    borderColor:     "rgba(84,241,100, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "50代",
-                    data:            this.data.B2_50_data,
-                    backgroundColor: "rgba(53,90,220, 0.8)",
-                    borderColor:     "rgba(53,90,220, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                  barPercentage:0.6,
-                    label:           "60代以上",
-                    data:            this.data.B2_60_data,
-                    backgroundColor: "rgba(151,71,255, 0.8)",
-                    borderColor:     "rgba(151,71,255, 1.0)",
-                    borderWidth:     1,
-                },
-                ],
-
-            },
-                options: {
-                    responsive: true,
-                    indexAxis: "y",
-                    plugins: {
-                        stacked100: { enable: true },
-                    }
-                }
-            
        });
     }
 
@@ -278,30 +188,29 @@ class MICSGrahp{
                     borderWidth:     1,
                 }],
             },
-                options: {
-                    responsive: true,
-                    scales: {
-                        x: {
-                            display:      true,
-                            stacked:      true,
-                            suggestedMax: 100,
-                            suggestedMin: 0,
-                            ticks: {
-                            stepSize: 10,
-                            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        display:      true,
+                        stacked:      true,
+                        suggestedMax: 100,
+                        suggestedMin: 0,
+                        ticks: {
+                        stepSize: 10,
                         },
-                        y: {
-                            display:      true,
-                            stacked:      true,
-                        }
+                    },
+                    y: {
+                        display:      true,
+                        stacked:      true,
                     }
                 }
-            
+            }
         });
     }
 
-    #GrahpD11(){
-        const element = document.getElementById('graph_D11').getContext('2d');
+    #GrahpD(id, data_10, data_20, data_30, data_40, data_50, data_60){
+        const element = document.getElementById(id).getContext('2d');
         const chart = new Chart(element, {
             type:'bar',
             data: {
@@ -310,7 +219,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "10代以下",
-                    data:            this.data.D11_10_data,
+                    data:            data_10,
                     backgroundColor: "rgba(220,53,69, 0.8)",
                     borderColor:     "rgba(220,53,69, 1.0)",
                     borderWidth:     1,
@@ -318,7 +227,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "20代",
-                    data:            this.data.D11_20_data,
+                    data:            data_20,
                     backgroundColor: "rgba(255,142,10, 0.8)",
                     borderColor:     "rgba(255,142,10, 1.0)",
                     borderWidth:     1,
@@ -326,7 +235,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "30代",
-                    data:            this.data.D11_30_data,
+                    data:            data_30,
                     backgroundColor: "rgba(255,228,88, 0.8)",
                     borderColor:     "rgba(255,228,88, 1.0)",
                     borderWidth:     1,
@@ -334,7 +243,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "40代",
-                    data:            this.data.D11_40_data,
+                    data:            data_40,
                     backgroundColor: "rgba(84,241,100, 0.8)",
                     borderColor:     "rgba(84,241,100, 1.0)",
                     borderWidth:     1,
@@ -342,7 +251,7 @@ class MICSGrahp{
                 {
                     barPercentage:0.6,
                     label:           "50代",
-                    data:            this.data.D11_50_data,
+                    data:            data_50,
                     backgroundColor: "rgba(53,90,220, 0.8)",
                     borderColor:     "rgba(53,90,220, 1.0)",
                     borderWidth:     1,
@@ -351,255 +260,15 @@ class MICSGrahp{
                     
                     barPercentage:0.6,
                     label:           "60代以上",
-                    data:            this.data.D11_60_data,
+                    data:            data_60,
                     backgroundColor: "rgba(151,71,255, 0.8)",
                     borderColor:     "rgba(151,71,255, 1.0)",
                     borderWidth:     1,
-                }
-                ],
+                }],
             },
-                options: {
-                   responsive: true,
-                   scales: {
-                        x: {
-                            display:      true,
-                            stacked:      true,
-                            suggestedMax: 100,
-                            suggestedMin: 0,
-                            ticks: {
-                                stepSize: 10,
-                            },
-                        },
-                        y: {
-                            display:      true,
-                            stacked:      true,
-                        }
-                    }
-                }
-            
-       });
-    }
-
-    #GrahpD12(){
-        const element = document.getElementById('graph_D12').getContext('2d');
-        const chart = new Chart(element, {
-            type:'bar',
-            data: {
-                labels: this.data.label_time_arr,
-                datasets: [
-                {
-                    barPercentage:0.6,
-                    label:           "10代以下",
-                    data:            this.data.D12_10_data,
-                    backgroundColor: "rgba(220,53,69, 0.8)",
-                    borderColor:     "rgba(220,53,69, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    
-                    barPercentage:0.6,
-                    label:           "20代",
-                    data:            this.data.D12_20_data,
-                    backgroundColor: "rgba(255,142,10, 0.8)",
-                    borderColor:     "rgba(255,142,10, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "30代",
-                    data:            this.data.D12_30_data,
-                    backgroundColor: "rgba(255,228,88, 0.8)",
-                    borderColor:     "rgba(255,228,88, 1.0)",
-                    borderWidth:     1,
-                },
-                {
-                barPercentage:0.6,
-                label:               "40代",
-                    data:            this.data.D12_40_data,
-                    backgroundColor: "rgba(84,241,100, 0.8)",
-                    borderColor:     "rgba(84,241,100, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "50代",
-                    data:            this.data.D12_50_data,
-                    backgroundColor: "rgba(53,90,220, 0.8)",
-                    borderColor:     "rgba(53,90,220, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    
-                    barPercentage:0.6,
-                    label:           "60代以上",
-                    data:            this.data.D12_60_data,
-                    backgroundColor: "rgba(151,71,255, 0.8)",
-                    borderColor:     "rgba(151,71,255, 1.0)",
-                    borderWidth:     1,
-                }
-                ],
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                    x: {
-                        display:      true,
-                        stacked:      true,
-                        suggestedMax: 100,
-                        suggestedMin: 0,
-                        ticks: {
-                        stepSize: 10,
-                        },
-                    },
-                    y: {
-                        display:      true,
-                        stacked:      true,
-                    }
-                }
-            }
-       });
-    }
-
-    #GrahpD13(){
-        const element = document.getElementById('graph_D13').getContext('2d');
-        const chart = new Chart(element, {
-            type:'bar',
-            data: {
-                labels: this.data.label_time_arr,
-                datasets: [
-                {
-                    barPercentage:0.6,
-                    label:           "10代以下",
-                    data:            this.data.D13_10_data,
-                    backgroundColor: "rgba(220,53,69, 0.8)",
-                    borderColor:     "rgba(220,53,69, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "20代",
-                    data:            this.data.D13_20_data,
-                    backgroundColor: "rgba(255,142,10, 0.8)",
-                    borderColor:     "rgba(255,142,10, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "30代",
-                    data:            this.data.D13_30_data,
-                    backgroundColor: "rgba(255,228,88, 0.8)",
-                    borderColor:     "rgba(255,228,88, 1.0)",
-                    borderWidth:     1,
-                },
-                {
-                    barPercentage:0.6,
-                    label:           "40代",
-                    data:            this.data.D13_40_data,
-                    backgroundColor: "rgba(84,241,100, 0.8)",
-                    borderColor:     "rgba(84,241,100, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "50代",
-                    data:            this.data.D13_50_data,
-                    backgroundColor: "rgba(53,90,220, 0.8)",
-                    borderColor:     "rgba(53,90,220, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    
-                    barPercentage:0.6,
-                    label:           "60代以上",
-                    data:            this.data.D13_60_data,
-                    backgroundColor: "rgba(151,71,255, 0.8)",
-                    borderColor:     "rgba(151,71,255, 1.0)",
-                    borderWidth:     1,
-                }
-                ],
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                    x: {
-                        display:      true,
-                        stacked:      true,
-                        suggestedMax: 100,
-                        suggestedMin: 0,
-                        ticks: {
-                        stepSize: 10,
-                        },
-                    },
-                    y: {
-                        display:      true,
-                        stacked:      true,
-                    }
-                }
-            }
-       });
-    }
-
-    #GrahpD21(){
-        const element = document.getElementById('graph_D21').getContext('2d');
-        const chart = new Chart(element, {
-            type:'bar',
-            data: {
-                labels: this.data.label_time_arr,
-                datasets: [
-                {
-                    barPercentage:0.6,
-                    label:           "10代以下",
-                    data:            this.data.D21_10_data,
-                    backgroundColor: "rgba(220,53,69, 0.8)",
-                    borderColor:     "rgba(220,53,69, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "20代",
-                    data:            this.data.D21_20_data,
-                    backgroundColor: "rgba(255,142,10, 0.8)",
-                    borderColor:     "rgba(255,142,10, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "30代",
-                    data:            this.data.D21_30_data,
-                    backgroundColor: "rgba(255,228,88, 0.8)",
-                    borderColor:     "rgba(255,228,88, 1.0)",
-                    borderWidth:     1,
-                },
-                {
-                    barPercentage:0.6,
-                    label:           "40代",
-                    data:            this.data.D21_40_data,
-                    backgroundColor: "rgba(84,241,100, 0.8)",
-                    borderColor:     "rgba(84,241,100, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "50代",
-                    data:            this.data.D21_50_data,
-                    backgroundColor: "rgba(53,90,220, 0.8)",
-                    borderColor:     "rgba(53,90,220, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    
-                    barPercentage:0.6,
-                    label:           "60代以上",
-                    data:            this.data.D21_60_data,
-                    backgroundColor: "rgba(151,71,255, 0.8)",
-                    borderColor:     "rgba(151,71,255, 1.0)",
-                    borderWidth:     1,
-                }
-                ],
-                },
-                options: {
-                  responsive: true,
-                   scales: {
+            options: {
+               responsive: true,
+               scales: {
                     x: {
                         display:      true,
                         stacked:      true,
@@ -616,164 +285,6 @@ class MICSGrahp{
                 }
             }
        });
-    }
-
-    #GrahpD22(){
-        const element = document.getElementById('graph_D22').getContext('2d');
-        const chart = new Chart(element, {
-            type:'bar',
-            data: {
-                labels: this.data.label_time_arr,
-                datasets: [
-                {
-                    barPercentage:0.6,
-                    label:           "10代以下",
-                    data:            this.data.D22_10_data,
-                    backgroundColor: "rgba(220,53,69, 0.8)",
-                    borderColor:     "rgba(220,53,69, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    
-                    barPercentage:0.6,
-                    label:           "20代",
-                    data:            this.data.D22_20_data,
-                    backgroundColor: "rgba(255,142,10, 0.8)",
-                    borderColor:     "rgba(255,142,10, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "30代",
-                    data:            this.data.D22_30_data,
-                    backgroundColor: "rgba(255,228,88, 0.8)",
-                    borderColor:     "rgba(255,228,88, 1.0)",
-                    borderWidth:     1,
-                },
-                {
-                    barPercentage:0.6,
-                    label:           "40代",
-                    data:            this.data.D22_40_data,
-                    backgroundColor: "rgba(84,241,100, 0.8)",
-                    borderColor:     "rgba(84,241,100, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "50代",
-                    data:            this.data.D22_50_data,
-                    backgroundColor: "rgba(53,90,220, 0.8)",
-                    borderColor:     "rgba(53,90,220, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    
-                    barPercentage:0.6,
-                    label:           "60代以上",
-                    data:            this.data.D22_60_data,
-                    backgroundColor: "rgba(151,71,255, 0.8)",
-                    borderColor:     "rgba(151,71,255, 1.0)",
-                    borderWidth:     1,
-                }
-                ],
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                    x: {
-                        display:      true,
-                        stacked:      true,
-                        suggestedMax: 100,
-                        suggestedMin: 0,
-                        ticks: {
-                        stepSize: 10,
-                        },
-                    },
-                    y: {
-                        display:      true,
-                        stacked:      true,
-                    }
-                }
-            }
-        });
-    }
-
-    #GrahpD23(){
-        const element = document.getElementById('graph_D23').getContext('2d');
-        const chart = new Chart(element, {
-            type:'bar',
-            data: {labels: this.data.label_time_arr,
-                datasets: [
-                {
-                    barPercentage:0.6,
-                    label:           "10代以下",
-                    data:            this.data.D23_10_data,
-                    backgroundColor: "rgba(220,53,69, 0.8)",
-                    borderColor:     "rgba(220,53,69, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "20代",
-                    data:            this.data.D23_20_data,
-                    backgroundColor: "rgba(255,142,10, 0.8)",
-                    borderColor:     "rgba(255,142,10, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "30代",
-                    data:            this.data.D23_30_data,
-                    backgroundColor: "rgba(255,228,88, 0.8)",
-                    borderColor:     "rgba(255,228,88, 1.0)",
-                    borderWidth:     1,
-                },
-                {
-                    barPercentage:0.6,
-                    label:           "40代",
-                    data:            this.data.D23_40_data,
-                    backgroundColor: "rgba(84,241,100, 0.8)",
-                    borderColor:     "rgba(84,241,100, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    barPercentage:0.6,
-                    label:           "50代",
-                    data:            this.data.D23_50_data,
-                    backgroundColor: "rgba(53,90,220, 0.8)",
-                    borderColor:     "rgba(53,90,220, 1.0)",
-                    borderWidth:     1,
-                }, 
-                {
-                    
-                    barPercentage:0.6,
-                    label:           "60代以上",
-                    data:            this.data.D23_60_data,
-                    backgroundColor: "rgba(151,71,255, 0.8)",
-                    borderColor:     "rgba(151,71,255, 1.0)",
-                    borderWidth:     1,
-                }
-                ],
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                    x: {
-                        display:      true,
-                        stacked:      true,
-                        suggestedMax: 100,
-                        suggestedMin: 0,
-                        ticks: {
-                            stepSize: 10,
-                        },
-                    },
-                        y: {
-                        display:      true,
-                        stacked:      true,
-                    }
-                }
-            }
-        });
     }
 
     //HTMLにグラフ部分を追加するする関数
@@ -904,7 +415,6 @@ class MICSGrahp{
         //DOM操作実行
         this.app_element = document.getElementById("app");
         this.app_element.insertAdjacentHTML('afterbegin', this.new_HTML_data);
-
 
         //ページ上部に戻るボタンのイベントを登録(デスクトップのみ)
         if (!navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
