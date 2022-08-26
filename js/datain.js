@@ -111,10 +111,7 @@ class DataIN{
         };
 
         //関心度分割
-        let all_max_int_arr   = backdata_arr.filter(x => x.interested <= 100 && x.interested >= max_intline);
-        let all_nomal_int_arr = backdata_arr.filter(x => x.interested < max_intline && x.interested >= not_intline);
-        let all_all_int_arr   = backdata_arr.filter(x => x.interested <= 100 && x.interested >= not_intline);
-        let all_not_int_arr   = backdata_arr.filter(x => x.interested < not_intline && x.interested >= 0);           
+        let [all_max_int_arr, all_nomal_int_arr, all_all_int_arr, all_not_int_arr] = this.#InterestFilter(backdata_arr, max_intline, not_intline);
 
         //性別分割
         let all_male_max_int_arr_in   = all_max_int_arr.filter(x => x.gender === 0);
@@ -145,10 +142,11 @@ class DataIN{
 
         for(let i = 0; i < plot_num; i = i + 1){
             //関心度分割
-            max_int_arr.push(backdata_arr_time[i].filter(x => x.interested <= 100 && x.interested >= max_intline));
-            nomal_int_arr.push(backdata_arr_time[i].filter(x => x.interested < max_intline && x.interested >= not_intline));
-            all_int_arr.push(backdata_arr_time[i].filter(x => x.interested <= 100 && x.interested >= not_intline));
-            not_int_arr.push(backdata_arr_time[i].filter(x => x.interested < not_intline && x.interested >= 0));
+            let interest_arr = this.#InterestFilter(backdata_arr_time[i], max_intline, not_intline);
+            max_int_arr.push(interest_arr[0]);
+            nomal_int_arr.push(interest_arr[1]);
+            all_int_arr.push(interest_arr[2]);
+            not_int_arr.push(interest_arr[3]);
 
             //性別分割
             male_max_int_arr.push(max_int_arr[i].filter(x => x.gender === 0));
@@ -171,6 +169,17 @@ class DataIN{
         };
     };
 
+    //関心度分割
+    #InterestFilter(arr, max_intline, not_intline){
+        return[
+            arr.filter(x => x.interested <= 100 && x.interested >= max_intline),
+            arr.filter(x => x.interested < max_intline && x.interested >= not_intline),
+            arr.filter(x => x.interested <= 100 && x.interested >= not_intline),
+            arr.filter(x => x.interested < not_intline && x.interested >= 0)        
+        ]
+    }
+
+    //グラフBの処理
     #GrahpBFilter(male,female){
         return [
             [male.filter(x => x.age < 20).length                ,female.filter(x => x.age < 20).length               ],
@@ -182,6 +191,7 @@ class DataIN{
         ]
     }
 
+    //グラフDの処理
     #GrahpDFilter(arr,i,D10_data,D20_data,D30_data,D40_data,D50_data,D60_data){
         D10_data.push(arr[i].filter(x => x.age < 20).length); 
         D20_data.push(arr[i].filter(x => x.age < 30 && x.age >= 20).length); 
