@@ -240,82 +240,118 @@ class DataIN{
             C1_notint_data.push(not_int_arr[i].length);
 
 
-            let D11_10_data_in = max_int_arr[i].filter(x => x.age < 20);                     D11_10_data.push(D11_10_data_in.length); 
+            let D11_10_data_in = max_int_arr[i].filter(x => x.age < 20);                     
+            D11_10_data.push(D11_10_data_in.length); 
 
-            let D11_20_data_in = max_int_arr[i].filter(x => x.age < 30 && x.age>=20);        D11_20_data.push(D11_20_data_in.length); 
+            let D11_20_data_in = max_int_arr[i].filter(x => x.age < 30 && x.age>=20);        
+            D11_20_data.push(D11_20_data_in.length); 
 
-            let D11_30_data_in = max_int_arr[i].filter(x => x.age < 40 && x.age>=30);        D11_30_data.push(D11_30_data_in.length);
+            let D11_30_data_in = max_int_arr[i].filter(x => x.age < 40 && x.age>=30);        
+            D11_30_data.push(D11_30_data_in.length);
 
-            let D11_40_data_in = max_int_arr[i].filter(x => x.age < 50 && x.age>=40);        D11_40_data.push(D11_40_data_in.length);
+            let D11_40_data_in = max_int_arr[i].filter(x => x.age < 50 && x.age>=40);        
+            D11_40_data.push(D11_40_data_in.length);
 
-            let D11_50_data_in = max_int_arr[i].filter(x => x.age < 60 && x.age>=50);        D11_50_data.push(D11_50_data_in.length);
+            let D11_50_data_in = max_int_arr[i].filter(x => x.age < 60 && x.age>=50);        
+            D11_50_data.push(D11_50_data_in.length);
 
-            let D11_60_data_in = max_int_arr[i].filter(x => x.age <= 120 && x.age>=60);      D11_60_data.push(D11_60_data_in.length);
-
-
-            let D12_10_data_in = mail_max_int_arr[i].filter(x => x.age < 20);                D12_10_data.push(D12_10_data_in.length);
-
-            let D12_20_data_in = mail_max_int_arr[i].filter(x => x.age < 30 && x.age>=20);   D12_20_data.push(D12_20_data_in.length);
-
-            let D12_30_data_in = mail_max_int_arr[i].filter(x => x.age < 40 && x.age>=30);   D12_30_data.push(D12_30_data_in.length);
-
-            let D12_40_data_in = mail_max_int_arr[i].filter(x => x.age < 50 && x.age>=40);   D12_40_data.push(D12_40_data_in.length);
-
-            let D12_50_data_in = mail_max_int_arr[i].filter(x => x.age < 60 && x.age>=50);   D12_50_data.push(D12_50_data_in.length);
-
-            let D12_60_data_in = mail_max_int_arr[i].filter(x => x.age <= 120 && x.age>=60); D12_60_data.push(D12_60_data_in.length);
+            let D11_60_data_in = max_int_arr[i].filter(x => x.age <= 120 && x.age>=60);      
+            D11_60_data.push(D11_60_data_in.length);
 
 
-            let D13_10_data_in = femail_max_int_arr[i].filter(x => x.age < 20);                D13_10_data.push(D13_10_data_in.length);
+            let D12_10_data_in = mail_max_int_arr[i].filter(x => x.age < 20);                
+            D12_10_data.push(D12_10_data_in.length);
 
-            let D13_20_data_in = femail_max_int_arr[i].filter(x => x.age < 30 && x.age>=20);   D13_20_data.push(D13_20_data_in.length);
+            let D12_20_data_in = mail_max_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
+            D12_20_data.push(D12_20_data_in.length);
 
-            let D13_30_data_in = femail_max_int_arr[i].filter(x => x.age < 40 && x.age>=30);   D13_30_data.push(D13_30_data_in.length);
+            let D12_30_data_in = mail_max_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
+            D12_30_data.push(D12_30_data_in.length);
 
-            let D13_40_data_in = femail_max_int_arr[i].filter(x => x.age < 50 && x.age>=40);   D13_40_data.push(D13_40_data_in.length);
+            let D12_40_data_in = mail_max_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
+            D12_40_data.push(D12_40_data_in.length);
 
-            let D13_50_data_in = femail_max_int_arr[i].filter(x => x.age < 60 && x.age>=50);   D13_50_data.push(D13_50_data_in.length);
+            let D12_50_data_in = mail_max_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
+            D12_50_data.push(D12_50_data_in.length);
 
-            let D13_60_data_in = femail_max_int_arr[i].filter(x => x.age <= 120 && x.age>=60); D13_60_data.push(D13_60_data_in.length);
-
-
-            let D21_10_data_in = all_int_arr[i].filter(x => x.age < 20);                D21_10_data.push(D21_10_data_in.length);
-
-            let D21_20_data_in = all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   D21_20_data.push(D21_20_data_in.length);
-
-            let D21_30_data_in = all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   D21_30_data.push(D21_30_data_in.length);
-
-            let D21_40_data_in = all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   D21_40_data.push(D21_40_data_in.length);
-
-            let D21_50_data_in = all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   D21_50_data.push(D21_50_data_in.length);
-
-            let D21_60_data_in = all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); D21_60_data.push(D21_60_data_in.length);
+            let D12_60_data_in = mail_max_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
+            D12_60_data.push(D12_60_data_in.length);
 
 
-            let D22_10_data_in = mail_all_int_arr[i].filter(x => x.age < 20);                D22_10_data.push(D22_10_data_in.length);
+            let D13_10_data_in = femail_max_int_arr[i].filter(x => x.age < 20);                
+            D13_10_data.push(D13_10_data_in.length);
 
-            let D22_20_data_in = mail_all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   D22_20_data.push(D22_20_data_in.length);
+            let D13_20_data_in = femail_max_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
+            D13_20_data.push(D13_20_data_in.length);
 
-            let D22_30_data_in = mail_all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   D22_30_data.push(D22_30_data_in.length);
+            let D13_30_data_in = femail_max_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
+            D13_30_data.push(D13_30_data_in.length);
 
-            let D22_40_data_in = mail_all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   D22_40_data.push(D22_40_data_in.length);
+            let D13_40_data_in = femail_max_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
+            D13_40_data.push(D13_40_data_in.length);
 
-            let D22_50_data_in = mail_all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   D22_50_data.push(D22_50_data_in.length);
+            let D13_50_data_in = femail_max_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
+            D13_50_data.push(D13_50_data_in.length);
 
-            let D22_60_data_in = mail_all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); D22_60_data.push(D22_60_data_in.length);
+            let D13_60_data_in = femail_max_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
+            D13_60_data.push(D13_60_data_in.length);
 
 
-            let D23_10_data_in = femail_all_int_arr[i].filter(x => x.age < 20);                D23_10_data.push(D23_10_data_in.length);
+            let D21_10_data_in = all_int_arr[i].filter(x => x.age < 20);                
+            D21_10_data.push(D21_10_data_in.length);
 
-            let D23_20_data_in = femail_all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   D23_20_data.push(D23_20_data_in.length);
+            let D21_20_data_in = all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
+            D21_20_data.push(D21_20_data_in.length);
 
-            let D23_30_data_in = femail_all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   D23_30_data.push(D23_30_data_in.length);
+            let D21_30_data_in = all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
+            D21_30_data.push(D21_30_data_in.length);
 
-            let D23_40_data_in = femail_all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   D23_40_data.push(D23_40_data_in.length);
+            let D21_40_data_in = all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
+            D21_40_data.push(D21_40_data_in.length);
 
-            let D23_50_data_in = femail_all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   D23_50_data.push(D23_50_data_in.length);
+            let D21_50_data_in = all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
+            D21_50_data.push(D21_50_data_in.length);
 
-            let D23_60_data_in = femail_all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); D23_60_data.push(D23_60_data_in.length);
+            let D21_60_data_in = all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
+            D21_60_data.push(D21_60_data_in.length);
+
+
+            let D22_10_data_in = mail_all_int_arr[i].filter(x => x.age < 20);                
+            D22_10_data.push(D22_10_data_in.length);
+
+            let D22_20_data_in = mail_all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
+            D22_20_data.push(D22_20_data_in.length);
+
+            let D22_30_data_in = mail_all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
+            D22_30_data.push(D22_30_data_in.length);
+
+            let D22_40_data_in = mail_all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
+            D22_40_data.push(D22_40_data_in.length);
+
+            let D22_50_data_in = mail_all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
+            D22_50_data.push(D22_50_data_in.length);
+
+            let D22_60_data_in = mail_all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
+            D22_60_data.push(D22_60_data_in.length);
+
+
+            let D23_10_data_in = femail_all_int_arr[i].filter(x => x.age < 20);                
+            D23_10_data.push(D23_10_data_in.length);
+
+            let D23_20_data_in = femail_all_int_arr[i].filter(x => x.age < 30 && x.age>=20);   
+            D23_20_data.push(D23_20_data_in.length);
+
+            let D23_30_data_in = femail_all_int_arr[i].filter(x => x.age < 40 && x.age>=30);   
+            D23_30_data.push(D23_30_data_in.length);
+
+            let D23_40_data_in = femail_all_int_arr[i].filter(x => x.age < 50 && x.age>=40);   
+            D23_40_data.push(D23_40_data_in.length);
+
+            let D23_50_data_in = femail_all_int_arr[i].filter(x => x.age < 60 && x.age>=50);   
+            D23_50_data.push(D23_50_data_in.length);
+
+            let D23_60_data_in = femail_all_int_arr[i].filter(x => x.age <= 120 && x.age>=60); 
+            D23_60_data.push(D23_60_data_in.length);
         };
 
 

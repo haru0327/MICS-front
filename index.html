@@ -25,23 +25,23 @@
     </header>
     <div class="container" id="serch_container">
       <div class="searcharea">
-        <h1>グラフ描画</h1>
+        <h1>時間指定</h1>
         <hr noshade> 
         <!-- 日付指定 -->
         <div class="inputarea">
             <div class="datetime1">
-                <p>はじまり</p>
+                <p>開始時刻</p>
                 <input type="date" id="input-date1" class="date">
                 <input type="time" id="input-time1">
             </div>
             <div class="datetime2">
-                <p>おわり</p>
+                <p>終了時刻</p>
                 <input type="date" id="input-date2"class="date">
                 <input type="time" id="input-time2">
             </div>
         </div>
         <!-- データ取得ボタン -->
-        <div class="searchbutton"><input type="button" onclick="mics_data.PullMessage()" value="Plot" style="min-width: 90px"></div>  
+        <div class="searchbutton"><input type="button" onclick="mics_data.PullMessage()" value="Plot" style="min-width: 90px" id="hover_button"></div>  
         <!-- デバッグ表示部分 -->
         <p id="output-message"></p>
       </div>
