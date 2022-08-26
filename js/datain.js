@@ -11,25 +11,25 @@ class DataIN{
   
         //選択期間　0分～3時間
         if(bet_time<10800 && bet_time>=0){
-            this.data_process(10800,600,18,d1,d2,InterestData);
+            this.data_process(10800,600,d1,d2,InterestData);
             console.log("[Info] 0~3hour");
         }
         //選択期間　3時間～1日
         else if (bet_time<86400 && bet_time>=10800){
-            this.data_process(86400,3600,24,d1,d2,InterestData);
+            this.data_process(86400,3600,d1,d2,InterestData);
             console.log("[Info] 3h~1d");
         
         }
         //選択期間　1日～31日
         else if(bet_time<=2678400 && bet_time>=86400){
-            this.data_process(2678400,86400,31,d1,d2,InterestData);
+            this.data_process(2678400,86400,d1,d2,InterestData);
             console.log("[Info] 1d~31d");
         };
 
     };
 
     //データ分割関数
-    data_process(max_time,div_time,plot_num,user_intime,user_outtime,InterestData){
+    data_process(max_time,div_time,user_intime,user_outtime,InterestData){
 
         let backdata_arr = JSON.parse(InterestData);
 
@@ -126,6 +126,8 @@ class DataIN{
         for(let h=user_intime-32400 ;h<(user_outtime-32400)+div_time ;h=h+div_time){
             label_unix_in.push(h);
         };
+
+        let plot_num=(d2-d1)/div_time ;
 
         for(let i=0 ;i<plot_num ;i=i+1){
             let label_time_in= new Date(label_unix_in[i]*1000);
