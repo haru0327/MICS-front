@@ -4,7 +4,7 @@ Grahp表示関係
 */
 
 //指定した要素を子含めて全削除
-function removeAll(element){
+function RemoveAll(element){
     while(element.firstChild){
         element.removeChild(element.firstChild);
     }
@@ -24,11 +24,11 @@ class MICSGrahp{
 
     //グラフの再描画
     Update(MICS_class){
-        removeAll(document.getElementById("graphA" ))
-        removeAll(document.getElementById("graphB" ))
-        removeAll(document.getElementById("graphC" ))
-        removeAll(document.getElementById("graphD1"))
-        removeAll(document.getElementById("graphD2"))
+        RemoveAll(document.getElementById("graphA" ))
+        RemoveAll(document.getElementById("graphB" ))
+        RemoveAll(document.getElementById("graphC" ))
+        RemoveAll(document.getElementById("graphD1"))
+        RemoveAll(document.getElementById("graphD2"))
         this.#AddGraphDOM();
         this.data = new DataIN(MICS_class.date_first, MICS_class.date_last, MICS_class.interest_data);
         this.#LoadGrahps();
