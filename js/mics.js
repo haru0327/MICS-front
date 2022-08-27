@@ -51,7 +51,7 @@ mics_data = new MICS();
 //空欄に入力
 function SetValueToBlank(target, value){
     if(target.value == ""){
-        console.log("[Info] Set input value")
+        console.log("[Info] Set input value");
         target.value = value;
     }
 }

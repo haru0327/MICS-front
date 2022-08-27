@@ -21,17 +21,17 @@ function PullMessage(MICS_class){
 
     const inputdateValue1 = datebox1.value;
     const inputtimeValue1 = timebox1.value;
-    const datetime1=inputdateValue1+" "+inputtimeValue1
-    d1=(Date.parse(datetime1)/1000)+32400
+    const datetime1=inputdateValue1+" "+inputtimeValue1;
+    d1=(Date.parse(datetime1)/1000)+32400;
 
     const inputdateValue2 = datebox2.value;
     const inputtimeValue2 = timebox2.value;
-    const datetime2=inputdateValue2+" "+inputtimeValue2
-    d2=(Date.parse(datetime2)/1000)+32400
+    const datetime2=inputdateValue2+" "+inputtimeValue2;
+    d2=(Date.parse(datetime2)/1000)+32400;
 
     //時間範囲の確認
     if(d2 - d1 > 2678400){
-      alert("時間指定の範囲を1ヶ月以内にしてください。")
+      alert("時間指定の範囲を1ヶ月以内にしてください。");
       return;
     }
 
@@ -51,10 +51,10 @@ function PullMessage(MICS_class){
     })//レスポンスを処理
     .then(response => {
       console.log("[Info] Successfully connect to server");
-      ApiData= response.data
+      ApiData = response.data;
       InterestData = JSON.parse(JSON.stringify(ApiData));
       //console.log(InterestData);
-      MICS_class.GetMessage(d1, d2, InterestData)
+      MICS_class.GetMessage(d1, d2, InterestData);
       //エラー処理
     }).catch(err => {
       //サーバーエラー
@@ -65,12 +65,12 @@ function PullMessage(MICS_class){
         } = err.response;
         let error_msg = `[Error] Could not connect to server (HTTP Status: ${status} ${statusText})`;
         console.log(error_msg);
-        alert(error_msg)
+        alert(error_msg);
       }
       //その他のエラー
       else{
         //エラーメッセージ
-        throw new Error(err.stack)
+        throw new Error(err.stack);
       }
     }).finally(() => {
       //ボタン再アクティブ化
