@@ -144,6 +144,40 @@ header{
     bottom:0%;
 }
 
+.localfilearea{
+    width:60%;
+    height:200px;
+    margin:60px auto;
+    background-color:white;
+    border-radius:20px;
+    position:relative;
+    top:1.5%;
+    text-align: center;
+    border-bottom: solid 3px #bdc0c3;
+    border-left:solid 2px #bdc0c3 ;
+    border-radius: 9px;
+    padding: 0.5em 1em;
+
+}
+.localfilearea h1{
+    color:rgb(241, 102, 9);
+    margin-top: 10px;
+    letter-spacing: 0.005em;
+    font-size: 30px;
+    font-weight: 500;
+}
+.localfilearea hr{
+    border:solid 1px #e2e2e2;
+    border-radius: 5px;
+    margin:0 auto;
+    width:90%;
+}
+.localfilearea p{
+    position:relative;
+    bottom:0%;
+}
+
+
 #app{
     margin-top: 80px;
     display:flex;
@@ -628,6 +662,21 @@ footer{
         width:85%;
         height:auto;
         margin:0 auto;
+        background-color:white;
+        border-radius:20px;
+        position:relative;
+        top:1.5%;
+        text-align: center;
+        border-bottom: solid 3px #bdc0c3;
+        border-left:solid 2px #bdc0c3 ;
+        border-radius: 9px;
+        padding: 0.5em 1em;
+    }
+
+    .localfilearea{
+        width:85%;
+        height:auto;
+        margin:60px auto;
         background-color:white;
         border-radius:20px;
         position:relative;

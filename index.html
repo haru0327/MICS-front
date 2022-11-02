@@ -27,7 +27,6 @@
       <div class="searcharea">
         <h1>時間指定</h1>
         <hr noshade> 
-        <!-- 日付指定 -->
         <div class="inputarea">
             <div class="datetime1">
                 <p>開始時刻</p>
@@ -40,8 +39,16 @@
                 <input type="time" id="input-time2">
             </div>
         </div>
-        <!-- データ取得ボタン -->
         <div class="searchbutton"><input type="button" onclick="mics_data.PullMessage()" value="Plot" style="min-width: 90px" id="hover_button"></div>  
+      </div>
+
+      <div class="localfilearea">
+        <h1>CSVから読み込み</h1>
+        <hr noshade> 
+        <div class="inputarea">
+          <input type="file" id="input_file" class="file">
+        </div>
+        <div class="searchbutton"><input type="button" onclick="mics_data.PullMessageCSV()" value="Plot" style="min-width: 90px" id="hover_button"></div>  
       </div>
 
       <!-- グラフ描画部分 -->

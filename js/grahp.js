@@ -77,11 +77,11 @@ class MICSGrahp{
         const chart = new Chart(element, {
             type:'pie',
             data: {
-                labels: ["女性", "男性"],
+                labels: ["男性", "女性"],
                 datasets: [{
                     backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)'
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)'
                     ],
                     data: data
                 }]
@@ -95,7 +95,7 @@ class MICSGrahp{
         const chart = new Chart(element, {
             type:'bar',
             data: {
-                labels: ["女性", "男性"],
+                labels: ["男性", "女性"],
                 datasets: [
                 {
                     barPercentage:0.6,
@@ -366,14 +366,14 @@ class MICSGrahp{
             </div>
             <hr>
             <div class="graphD12">
-                <h2>女性</h2>
+                <h2>男性</h2>
                 <div class="graphD12inner">
                     <canvas id="graph_D12" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD13">
-                <h2>男性</h2>
+                <h2>女性</h2>
                 <div class="graphD13inner">
                     <canvas id="graph_D13" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>
@@ -393,14 +393,14 @@ class MICSGrahp{
             </div>
             <hr>
             <div class="graphD22">
-                <h2>女性</h2>
+                <h2>男性</h2>
                 <div class="graphD22inner">
                     <canvas id="graph_D22" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>
             </div>
             <hr>
             <div class="graphD23">
-                <h2>男性</h2>
+                <h2>女性</h2>
                 <div class="graphD23inner">
                     <canvas id="graph_D23" width="100" height="280" style="max-height: 100%"></canvas>
                 </div>         
