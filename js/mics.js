@@ -42,6 +42,11 @@ class MICS{
         PullMessage(this)
     }
 
+    //サーバーからデータを取得(ラッパー)
+    PullMessageCSV(){
+        PullMessageCSV(this)
+    }
+
 }
 
 mics_data = new MICS();
