@@ -53,10 +53,6 @@ function PullMessage(MICS_class){
     d1, d2 = GetDateTime();
 
     //時間範囲の確認
-    // if(d2 - d1 > 2678400){
-    //   alert("時間指定の範囲を1ヶ月以内にしてください。");
-    //   return 0;
-    // }else 
     if(isNaN(d2 - d1) || d2 - d1 < 0){
       alert("有効な開始時刻と終了時刻を指定してください。");
       return 0;
@@ -208,10 +204,6 @@ function PullMessageCSV(MICS_class){
     d1, d2 = GetDateTime();
     
     //時間範囲の確認
-    // if(d2 - d1 > 2678400){
-    //   alert("時間指定の範囲を1ヶ月以内にしてください。");
-    //   return 0;
-    // }else 
     if(isNaN(d2 - d1) || d2 - d1 < 0){
       alert("有効な開始時刻と終了時刻を指定してください。");
       return 0;
