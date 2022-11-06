@@ -25,6 +25,26 @@
     </header>
     <div class="container" id="search_container">
       <div class="searcharea">
+        <h1>データ指定</h1>
+        <hr noshade> 
+        <div class="datainput">
+          <div class="toggle">
+            <input type="checkbox" id="server_csv">
+            <label for="server_csv" id="server">SERVER</label>
+            <label for="server_csv" id="csv">CSV</label>
+          </div>
+          <div class="option_check_box" id="server_option">
+            <input type="checkbox" id="server_option_check">サーバアドレスを表示</input>
+            <input type="text" id="server_address" style="visibility: hidden;" value="https://fast-fjord-64260.herokuapp.com/camera-data">
+          </div>
+          <div class="option_check_box" id="csv_option" style="display: none;">
+            <input type="checkbox" id="csv_datetime_auto_fill" checked>時間を自動設定</input>
+
+            <div class="csv_inputarea">
+              <input type="file" id="input_file" class="file" accept=".csv">
+            </div>
+          </div>
+        </div>
         <h1>時間指定</h1>
         <hr noshade> 
         <div class="inputarea">
@@ -39,18 +59,27 @@
                 <input type="time" id="input-time2">
             </div>
         </div>
+        <div class="time_interval_area">
+          <label for="time_interval">データを分割する時間間隔　</label>
+          <select name="time_interval" id="time_interval">
+            <option value="0">デフォルト</option>
+            <option value="600">10分</option>
+            <option value="1800">30分</option>
+            <option value="3600">1時間</option>
+            <option value="10800">3時間</option>
+            <option value="21600">6時間</option>
+            <option value="43200">12時間</option>
+            <option value="86400">1日</option>
+            <option value="172800">2日</option>
+            <option value="259200">3日</option>
+            <option value="604800">7日</option>
+            <option value="1209600">14日</option>
+            <option value="2678400">31日</option>
+          </select>
+        </div>
         <div class="searchbutton"><input type="button" onclick="mics_data.PullMessage()" value="Plot" style="min-width: 90px" id="hover_button"></div>  
       </div>
-
-      <div class="localfilearea">
-        <h1>CSVから読み込み</h1>
-        <hr noshade> 
-        <div class="inputarea">
-          <input type="file" id="input_file" class="file">
-        </div>
-        <div class="searchbutton"><input type="button" onclick="mics_data.PullMessageCSV()" value="Plot" style="min-width: 90px" id="hover_button"></div>  
-      </div>
-
+      
       <!-- グラフ描画部分 -->
       <div id="app" class="app"></div>
 

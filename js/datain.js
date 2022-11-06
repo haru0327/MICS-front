@@ -5,28 +5,60 @@ MICS Front
 class DataIN{
     constructor(d1, d2, InterestData){
         //選択期間
-        let bet_time = d2 - d1;
-
-        //選択期間　0分～3時間
-        if(bet_time<10800 && bet_time>=0){
-            this.#data_process(10800,600,d1,d2,InterestData);
-            console.log("[Info] 0~3hour");
+        this.bet_time = d2 - d1;
+        //選択期間　0分～3時間　10分間隔
+        if(this.bet_time<10800 && this.bet_time>=0){
+            this.#data_process(this.#get_interval_time(10800,600),d1,d2,InterestData);
+            console.log("[Info] 0h~3h");
         }
-        //選択期間　3時間～1日
-        else if (bet_time<86400 && bet_time>=10800){
-            this.#data_process(86400,3600,d1,d2,InterestData);
-            console.log("[Info] 3h~1d");
+        //選択期間　3時間～12時間　30分間隔
+        else if (this.bet_time<43200 && this.bet_time>=10800){
+            this.#data_process(this.#get_interval_time(86400,1800),d1,d2,InterestData);
+            console.log("[Info] 3h~12h");
         }
-        //選択期間　1日～31日
-        else if(bet_time<=2678400 && bet_time>=86400){
-            this.#data_process(2678400,86400,d1,d2,InterestData);
+        //選択期間　12時間～1日　1時間間隔
+        else if (this.bet_time<86400 && this.bet_time>=43200){
+            this.#data_process(this.#get_interval_time(86400,3600),d1,d2,InterestData);
+            console.log("[Info] 12h~1d");
+        }
+        //選択期間　1日～31日　1日間隔
+        else if(this.bet_time<2678400 && this.bet_time>=86400){
+            this.#data_process(this.#get_interval_time(2678400,86400),d1,d2,InterestData);
             console.log("[Info] 1d~31d");
         }
-    };
-
+        //選択期間　1ヶ月～3ヶ月　1週間間隔
+        else if(this.bet_time<8035200 && this.bet_time>=2678400){
+            this.#data_process(this.#get_interval_time(8035200,604800),d1,d2,InterestData);
+            console.log("[Info] 1m~3m");
+        }
+        //選択期間　3ヶ月～6ヶ月　2週間間隔
+        else if(this.bet_time<=15768000 && this.bet_time>=8035200){
+            this.#data_process(this.#get_interval_time(15768000,1209600),d1,d2,InterestData);
+            console.log("[Info] 3m~6m");
+        }
+        //選択期間　6ヶ月以上　1ヶ月間隔
+        else{
+            this.#data_process(this.#get_interval_time(this.bet_time,2678400),d1,d2,InterestData);
+            console.log("[Info] over 6m");
+        }
+    }
+    //時間間隔指定関数
+    #get_interval_time(max_time,default_interval){
+        let selected_interval = document.getElementById("time_interval").value;
+        if(selected_interval == 0){
+            return [max_time,default_interval]
+        }
+        else{
+            if(this.bet_time / selected_interval > 512){
+                alert("分割数が多すぎるためデフォルトの値を使用します")
+                return [max_time,default_interval]
+            }
+            return [max_time,Math.min(max_time,selected_interval)]
+        }
+    }
     //データ分割関数
-    #data_process(max_time,div_time,user_intime,user_outtime,InterestData){
-
+    #data_process(max_div_time_arr,user_intime,user_outtime,InterestData){
+        let [max_time, div_time] = max_div_time_arr;
         let backdata_arr = JSON.parse(InterestData);
 
         //関心度調整変数
@@ -167,7 +199,7 @@ class DataIN{
             this.#GrahpDFilter(male_all_int_arr  , i, this.D22_10_data, this.D22_20_data, this.D22_30_data, this.D22_40_data, this.D22_50_data, this.D22_60_data);
             this.#GrahpDFilter(female_all_int_arr, i, this.D23_10_data, this.D23_20_data, this.D23_30_data, this.D23_40_data, this.D23_50_data, this.D23_60_data);
         };
-    };
+    }
 
     //関心度分割
     #InterestFilter(arr, max_intline, not_intline){
