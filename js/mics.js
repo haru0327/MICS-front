@@ -88,3 +88,37 @@ let time2 = document.getElementById("input-time2");
 date1.addEventListener("input", {date: date2, date_set_value: date1.value, set_time_flag: true, time: time2, time_set_value: "23:59", handleEvent: SetDateInput});
 date1.addEventListener("input", {time: time1, time_set_value: "00:00", handleEvent: SetTimeInput});
 date2.addEventListener("input", {time: time2, time_set_value: "00:00", handleEvent: SetTimeInput});
+
+
+//server/csv切り替え
+let server_option = document.getElementById("server_option");
+let csv_option = document.getElementById("csv_option");
+let server_csv_button = document.getElementById("server_csv");
+server_csv_button.onclick = function(){
+    let PlotButton = document.getElementsByClassName('searchbutton')[0].childNodes.item(0)
+    if(server_csv_button.checked == true){
+        csv_option.style.display="flex"
+        server_option.style.display="none"
+        PlotButton.onclick = function(){
+            mics_data.PullMessageCSV()
+        }
+    }else{
+        csv_option.style.display="none"
+        server_option.style.display="flex"
+        PlotButton.onclick = function(){
+            mics_data.PullMessage()
+        }
+    }
+}
+
+//サーバアドレス変更欄の表示、非表示
+let server_option_check = document.getElementById("server_option_check");
+server_option_check.onclick = function(){
+    let value;
+    if(server_option_check.checked == true){
+        value = "visible"
+    }else{
+        value = "hidden"
+    }
+    document.getElementById("server_address").style.visibility = value
+}

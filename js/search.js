@@ -9,32 +9,58 @@ let ApiData = []
 ,   InterestData=[]
 ,   ConnectingNow=false;
 
+function GetDateTime(){
+  const datebox1 = document.getElementById("input-date1");
+  const timebox1 = document.getElementById("input-time1");
+
+  const datebox2 = document.getElementById("input-date2");
+  const timebox2 = document.getElementById("input-time2");
+
+  const inputdateValue1 = datebox1.value;
+  const inputtimeValue1 = timebox1.value;
+  const datetime1=inputdateValue1+" "+inputtimeValue1;
+
+  d1=(Date.parse(datetime1)/1000)+32400;
+
+  const inputdateValue2 = datebox2.value;
+  const inputtimeValue2 = timebox2.value;
+  const datetime2=inputdateValue2+" "+inputtimeValue2;
+
+  d2=(Date.parse(datetime2)/1000)+32400;
+
+  return d1, d2
+}
+
+//ロード後のボタン再アクティブ化処理
+function ButtonReActivate(serch_button){
+  //ボタン再アクティブ化
+  serch_button.value = 'Loaded!!';
+  new Promise((resolve) => {
+    //1秒後に実行する処理
+    setTimeout(() => {
+      resolve();
+    }, 600);
+  }).then(() => {
+    serch_button.value = 'Plot';
+  });
+  return false;
+}
+
 // JSONオブジェクトへ変換
 //指定された時間の受け取りとデータのリクエスト
 function PullMessage(MICS_class){
   if(ConnectingNow == false){
-    const datebox1 = document.getElementById("input-date1");
-    const timebox1 = document.getElementById("input-time1");
-
-    const datebox2 = document.getElementById("input-date2");
-    const timebox2 = document.getElementById("input-time2");
-
-    const inputdateValue1 = datebox1.value;
-    const inputtimeValue1 = timebox1.value;
-    const datetime1=inputdateValue1+" "+inputtimeValue1;
-    d1=(Date.parse(datetime1)/1000)+32400;
-
-    const inputdateValue2 = datebox2.value;
-    const inputtimeValue2 = timebox2.value;
-    const datetime2=inputdateValue2+" "+inputtimeValue2;
-    d2=(Date.parse(datetime2)/1000)+32400;
+    d1, d2 = GetDateTime();
 
     //時間範囲の確認
-    if(d2 - d1 > 2678400){
-      alert("時間指定の範囲を1ヶ月以内にしてください。");
-      return;
+    // if(d2 - d1 > 2678400){
+    //   alert("時間指定の範囲を1ヶ月以内にしてください。");
+    //   return 0;
+    // }else 
+    if(isNaN(d2 - d1) || d2 - d1 < 0){
+      alert("有効な開始時刻と終了時刻を指定してください。");
+      return 0;
     }
-
     //通信をおこなってデータゲット
     console.log("[Info] Connect to server");
 
@@ -43,7 +69,7 @@ function PullMessage(MICS_class){
     serch_button.value = 'Loading…';
     ConnectingNow = true;
 
-    axios.get('https://fast-fjord-64260.herokuapp.com/camera-data', {
+    axios.get(document.getElementById('server_address').value, {
       params: {
         start_time: d1,
         end_time: d2,
@@ -59,13 +85,13 @@ function PullMessage(MICS_class){
     }).catch(err => {
       //サーバーエラー
       if(err.message == "Network Error"){
+        alert("サーバに接続できませんでした\n(Network Error)");
         const {
           status,
           statusText
         } = err.response;
         let error_msg = `[Error] Could not connect to server (HTTP Status: ${status} ${statusText})`;
         console.log(error_msg);
-        alert(error_msg);
       }
       //その他のエラー
       else{
@@ -74,8 +100,7 @@ function PullMessage(MICS_class){
       }
     }).finally(() => {
       //ボタン再アクティブ化
-      ConnectingNow = false;
-      serch_button.value = 'Plot';
+      ConnectingNow = ButtonReActivate(serch_button);
     });
   }
 }
@@ -92,9 +117,18 @@ function str_to_time(time){
 
 function str_to_unixtime(time){
   time = time.substr(0,4) + "/" + time.substr(4,2) + "/" + time.substr(6,2) + " " + time.substr(8,2) + ":" + time.substr(10,2) + ":" + time.substr(12,2);
-  let date = (new Date(time).getTime()  / 1000);
+  let date = (new Date(time).getTime() / 1000);
   date += 18 * 60 * 60;
   return date.toString();
+}
+
+function unixtime_to_datetime(unix_time){
+  datetime = new Date();
+  unix_time += datetime.getTimezoneOffset() * 60;
+  datetime = new Date((unix_time) * 1000);
+  date = datetime.getFullYear().toString().padStart(4, '0') + "-" + (datetime.getMonth() + 1).toString().padStart(2, '0') + "-" + datetime.getDate().toString().padStart(2, '0');
+  time = datetime.getHours().toString().padStart(2, '0') + ":" + datetime.getMinutes().toString().padStart(2, '0');
+  return [date, time]
 }
 
 // File APIに対応しているか確認
@@ -128,10 +162,9 @@ if(window.File && window.FileReader && window.FileList && window.Blob) {
               if(time > max_time)max_time=time;
             }
           }
-          
           str = str + ']'
           converted_json = str;
-          console.log(converted_json);
+          //console.log(converted_json);
           //console.log(min_time);
           //console.log(max_time);
           //console.log(max_time - min_time);
@@ -142,9 +175,21 @@ if(window.File && window.FileReader && window.FileList && window.Blob) {
             max_time = 0;
           }
           else if (max_time - min_time == 0){
-            max_time+= 60 * 10;
+            max_time += 60 * 10;
           }
           //console.log(str);
+
+          //時刻自動入力
+          if(document.getElementById("csv_datetime_auto_fill").checked == true){
+            let datetime = unixtime_to_datetime(min_time)
+            date1.value = datetime[0]
+            time1.value = datetime[1]
+            datetime = unixtime_to_datetime(max_time)
+            date2.value = datetime[0]
+            time2.value = datetime[1]
+          }
+
+
       }
       reader.readAsText(fileData);
   }
@@ -159,16 +204,21 @@ function PullMessageCSV(MICS_class){
       return 0;
     }
 
-    d1=min_time;
-    d2=max_time;
-
+    //選択した時間の取得
+    d1, d2 = GetDateTime();
+    
     //時間範囲の確認
-    if(d2 - d1 > 2678400){
-      alert("時間指定の範囲を1ヶ月以内にしてください。");
-      return;
+    // if(d2 - d1 > 2678400){
+    //   alert("時間指定の範囲を1ヶ月以内にしてください。");
+    //   return 0;
+    // }else 
+    if(isNaN(d2 - d1) || d2 - d1 < 0){
+      alert("有効な開始時刻と終了時刻を指定してください。");
+      return 0;
+    }else{
+      InterestData = JSON.stringify(JSON.parse(converted_json).filter(data => data.end_time_unix > d1 && data.end_time_unix < d2));
     }
-
-    //通信をおこなってデータゲット
+    //ロードしたことを表示
     console.log("[Info] Load from CSV");
 
     //ボタン非アクティブ化(2重リクエスト防止)
@@ -176,11 +226,9 @@ function PullMessageCSV(MICS_class){
     serch_button.value = 'Loading…';
     ConnectingNow = true;
 
-    InterestData = JSON.parse(JSON.stringify(converted_json));
-    //console.log(InterestData);
     MICS_class.GetMessage(d1, d2, InterestData);
+
     //ボタン再アクティブ化
-    ConnectingNow = false;
-    serch_button.value = 'Plot';
+    ConnectingNow = ButtonReActivate(serch_button);
   }
 }

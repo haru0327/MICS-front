@@ -50,11 +50,105 @@ header{
     padding-top: 60px;
 }
 
+.toggle{
+    height:36px; 
+    width:88%;
+    position:relative;
+    margin: 10px auto;
+    top:20%;
+    border: 2px solid rgb(254, 131, 49);
+    border-radius: 8px;
+}
+.toggle input{
+    height:36px; 
+    width:100%; 
+}
+#server{
+    border-color:rgb(254, 131, 49);
+    background-color:rgb(254, 131, 49);
+    color:rgb(255, 255, 255);
+    border-radius:0px;
+    left: 0%;
+}
+#csv{
+    border-color:rgb(254, 131, 49);
+    background-color:rgb(255, 255, 255);
+    color:rgb(254, 131, 49);
+    border-radius:0px 6px 6px 0px;
+    left: 50%;
+}
+.toggle label{
+    user-select: none;
+    font-size: 25px;
+    position:absolute;
+    left: 50%;
+    top: 0%;
+    height:36px; 
+    width:50%; 
+}
+.toggle input:checked ~ #server {
+    border-color:rgb(254, 131, 49);
+    background-color:rgb(255, 255, 255);
+    color:rgb(254, 131, 49);
+    border-radius:6px 0px 0px 6px;
+}
+.toggle input:checked ~ #csv {
+    border-color:rgb(254, 131, 49);
+    background-color:rgb(254, 131, 49);
+    color:rgb(255, 255, 255);
+    border-radius:0px;
+}
 
+.toggle input:checked .option_check_box{
+    display:none;
+}
 
+.toggle input:checked .csv_option{
+    display:block;
+}
+
+.option_check_box{
+    padding: 0% 6% 0% 6%;
+    color:rgb(254, 131, 49);
+    display:flex;
+    flex-direction: row ;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.option_check_box input[type="checkbox"] {
+    accent-color: rgb(255, 93, 29);
+}
+.option_check_box input[type="text"] {
+    border-color:rgb(254, 131, 49);
+}
+#server_option{
+    height: 65px;
+}
+#server_option_check:checked + #server_address:after{
+    visibility: visible;
+}
+#server_address{
+    width: 100%;
+}
+
+#csv_option{
+    height: 65px;
+}
+#input_file{
+    border-color:rgb(254, 131, 49);
+}
+.csv_inputarea{
+    width: 100%;
+    display:flex;
+    flex-direction: row ;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .searcharea{
     width:60%;
-    height:300px;
+    height:520px;
     margin:0 auto;
     background-color:white;
     border-radius:20px;
@@ -72,11 +166,26 @@ header{
     position:relative;
     margin:0 auto;
     width:88%;
-    position:relative;
-    top:10%;
-    display:flex; 
+    top:7%;
+    display:flex;
     
 }
+
+.time_interval_area{
+    color:rgb(241, 102, 9);
+    position:relative;
+    margin:0 auto;
+    width:88%;
+    top:9%;
+    display:flex;
+}
+.time_interval_area label{
+    color:rgb(241, 102, 9);
+}
+#time_interval{
+    border-color:rgb(254, 131, 49);
+}
+
 .searcharea h1{
     color:rgb(241, 102, 9);
     margin-top: 10px;
@@ -111,7 +220,7 @@ header{
     width:100%;
     position:relative;
     margin:0 auto;
-    top:20%;
+    top:15%;
     text-align: center;
 }
 .searchbutton input{
@@ -129,7 +238,6 @@ header{
 }
 
 .inputarea input{
-    
     border-color:rgb(241, 102, 9);
     border-radius:8px;
     border-width:2px;
@@ -699,6 +807,12 @@ footer{
         justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
+    }
+
+    .time_interval_area{
+        margin-top: 5px;
+        top:12%;
+        
     }
 
     .searchbutton{
