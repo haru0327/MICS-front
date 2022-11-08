@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Our Source -->
+    <script defer src="js/search.js"></script>
+    <script defer src="js/datain.js"></script>
+    <script defer src="js/grahp.js"></script>
+    <script defer src="js/mics.js"></script>
+    <!-- External Source -->
+    <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chartjs-plugin-stacked100@1.0.0"></script>
+
+    <title>MICS｜Analytics </title>
+    <link rel="stylesheet" href="css/mics.css">
+    <link rel="icon" href="img/micslogo.svg">
+  </head>
+  <body>
+    <header>
+      <h1 class="logo"><a href="./index.html"><img src="img/micslogo.svg" alt="サイトタイトル"></a></h1>
+      <h1 class="title">MICS｜Analytics</h1>
+      <h1 class="home_button"><a href="./index.html"><img src="img/home.svg" alt="ホーム" style="width: 40px; margin: 4px 0px 0px 4px;"></a></h1>
+    </header>
+    <div class="container" id="search_container">
+      <div class="searcharea">
+        <h1>データ指定</h1>
+        <hr noshade> 
+        <div class="datainput">
+          <div class="toggle">
+            <input type="checkbox" id="server_csv">
+            <label for="server_csv" id="server">SERVER</label>
+            <label for="server_csv" id="csv">CSV</label>
+          </div>
+          <div class="option_check_box" id="server_option">
+            <input type="checkbox" id="server_option_check">サーバアドレスを表示</input>
+            <input type="text" id="server_address" style="visibility: hidden;" value="https://fast-fjord-64260.herokuapp.com/camera-data">
+          </div>
+          <div class="option_check_box" id="csv_option" style="display: none;">
+            <input type="checkbox" id="csv_datetime_auto_fill" checked>時間を自動設定</input>
+
+            <div class="csv_inputarea">
+              <input type="file" id="input_file" class="file" accept=".csv">
+            </div>
+          </div>
+        </div>
+        <h1>時間指定</h1>
+        <hr noshade> 
+        <div class="inputarea">
+            <div class="datetime1">
+                <p>開始時刻</p>
+                <input type="date" id="input-date1" class="date">
+                <input type="time" id="input-time1">
+            </div>
+            <div class="datetime2">
+                <p>終了時刻</p>
+                <input type="date" id="input-date2"class="date">
+                <input type="time" id="input-time2">
+            </div>
+        </div>
+        <div class="time_interval_area">
+          <label for="time_interval">データを分割する時間間隔　</label>
+          <select name="time_interval" id="time_interval">
+            <option value="0">デフォルト</option>
+            <option value="600">10分</option>
+            <option value="1800">30分</option>
+            <option value="3600">1時間</option>
+            <option value="10800">3時間</option>
+            <option value="21600">6時間</option>
+            <option value="43200">12時間</option>
+            <option value="86400">1日</option>
+            <option value="172800">2日</option>
+            <option value="259200">3日</option>
+            <option value="604800">7日</option>
+            <option value="1209600">14日</option>
+            <option value="2678400">31日</option>
+          </select>
+        </div>
+        <div class="searchbutton"><input type="button" onclick="mics_data.PullMessage()" value="Plot" style="min-width: 90px" id="hover_button"></div>  
+      </div>
+      
+      <!-- グラフ描画部分 -->
+      <div id="app" class="app"></div>
+
+      <!-- ページ上部に戻るボタン -->
+      <button id="back_to_top" type="button" value="" style="visibility: hidden;" onclick="window.scroll({top: 0, behavior: 'smooth'})">
+        <img src="img/button_up.svg" alt="⬆" width="48px" height="50px" style="position: absolute; top: 5px; left: 4px;">
+      </button>
+            
+    </div>
+    <footer id="footer">
+      <h1 class="footertitle">Measuring Interest with a Camera System</h1>
+    </footer>
+  </body>
+
+</html>
