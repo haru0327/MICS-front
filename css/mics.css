@@ -1,8 +1,7 @@
 * {
     margin: 0; 
   }
-header{
-    
+header{ 
     display:flex;
     width:100%;
     height:100px;
@@ -42,6 +41,26 @@ header{
 .questionlogo img{
     height:25px;
     width:25px;
+}
+.home_button{
+    left:200px;
+    margin-right: 25px; 
+    height: 48px; 
+    width: 48px;
+    border-color:rgb(254, 131, 49);
+    background-color:rgb(254, 131, 49) ;
+    border-radius:8px;
+    border-width:medium;
+}
+.home_button:hover{
+    background-color:rgb(197, 101, 38);
+}
+.home_button a{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius:8px;
+    border-width:medium;
 }
 
 .container{
@@ -178,6 +197,7 @@ header{
     width:88%;
     top:9%;
     display:flex;
+    justify-content: center;
 }
 .time_interval_area label{
     color:rgb(241, 102, 9);
@@ -215,6 +235,7 @@ header{
     color:rgb(241, 102, 9);
     font-weight:400;
 }
+
 .searchbutton{
     height:25px;
     width:100%;
@@ -766,6 +787,14 @@ footer{
 }
 
 @media screen and (max-width: 560px) {
+    .responsive_hide{
+        display: none;
+    }
+
+    .home_button{
+        display: none;
+    }
+
     .searcharea{
         width:85%;
         height:auto;
