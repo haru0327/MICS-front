@@ -84,7 +84,6 @@ hr{
 }
 
 .download_area{
-    
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -94,7 +93,6 @@ hr{
 .download_button{
     border-radius:8px;
     border-width:medium;
-    
     flex-wrap: wrap;
     border-color:rgb(254, 131, 49);
 }
@@ -102,7 +100,7 @@ hr{
     margin: 0px;
     display: inline-block;
     width: 280px;
-    padding: 0px 10px;
+    padding: 0px 10px 5px;
     border-color:rgb(254, 131, 49);
     background-color:rgb(254, 131, 49) ;
     border-radius:8px;
